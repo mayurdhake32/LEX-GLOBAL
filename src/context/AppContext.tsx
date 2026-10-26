@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
-import { BlogPost, Course, TeamMember, Enrollment, ConsultationInquiry, NavigationPath } from '../types';
-import { INITIAL_COURSES, INITIAL_POSTS, INITIAL_TEAM } from '../data/initialData';
+import { BlogPost, Course, TeamMember, Enrollment, ConsultationInquiry, NavigationPath, PracticeArea } from '../types';
+import { INITIAL_COURSES, INITIAL_POSTS, INITIAL_TEAM, PRACTICE_AREAS } from '../data/initialData';
 
 interface ToastItem {
   id: string;
@@ -17,6 +17,7 @@ interface AppContextType {
   posts: BlogPost[];
   courses: Course[];
   team: TeamMember[];
+  practiceAreas: PracticeArea[];
   enrollments: Record<string, Enrollment>;
   bookmarks: string[];
   inquiries: ConsultationInquiry[];
@@ -624,6 +625,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         posts,
         courses,
         team: INITIAL_TEAM,
+        practiceAreas: PRACTICE_AREAS,
         enrollments,
         bookmarks,
         inquiries,

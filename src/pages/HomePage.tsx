@@ -1,12 +1,13 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
-import { ArrowRight, Star, BookOpen, GraduationCap, Scale, ShieldCheck, Check, Clock, Globe2, ChevronRight, PenSquare, Heart, Bookmark } from 'lucide-react';
+import { ArrowRight, Star, BookOpen, GraduationCap, Scale, ShieldCheck, Check, Clock, Globe2, ChevronRight, PenSquare, Heart, Bookmark, FileCheck, Shield, Users, Building, PenTool, Gavel } from 'lucide-react';
 
 export const HomePage: React.FC = () => {
   const {
     courses,
     posts,
     team,
+    practiceAreas,
     navigateTo,
     setQuickViewCourseId,
     setTeamModalId,
@@ -154,6 +155,109 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Core Practice Areas & Legal Expertise */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#B08D57]">
+              <Gavel className="w-3.5 h-3.5" />
+              <span>International Advisory</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0A1D37] mt-1.5">
+              Core Practice Areas & Expertise.
+            </h2>
+            <p className="text-sm text-[#5E6A7A] mt-1 max-w-xl">
+              Cross-border commercial advocacy, emergency tribunal relief, regulatory governance, and transactional due diligence across premier legal jurisdictions.
+            </p>
+          </div>
+          <button
+            onClick={() => navigateTo('practice-areas')}
+            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0A1D37] hover:text-[#B08D57] transition-colors"
+          >
+            <span>Explore All 6 Practice Areas</span>
+            <ChevronRight className="w-4 h-4 text-[#B08D57]" />
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {practiceAreas.map((pa) => {
+            const getIconComponent = () => {
+              switch (pa.iconName) {
+                case 'Scale':
+                  return <Scale className="w-5 h-5 text-[#B08D57]" />;
+                case 'FileCheck':
+                  return <FileCheck className="w-5 h-5 text-[#B08D57]" />;
+                case 'Shield':
+                  return <Shield className="w-5 h-5 text-[#B08D57]" />;
+                case 'Users':
+                  return <Users className="w-5 h-5 text-[#B08D57]" />;
+                case 'Building':
+                  return <Building className="w-5 h-5 text-[#B08D57]" />;
+                case 'PenTool':
+                  return <PenTool className="w-5 h-5 text-[#B08D57]" />;
+                default:
+                  return <Scale className="w-5 h-5 text-[#B08D57]" />;
+              }
+            };
+
+            return (
+              <div
+                key={pa.id}
+                className="bg-white rounded-2xl border border-[#0A1D37]/10 hover:border-[#B08D57]/40 shadow-sm p-6 flex flex-col justify-between group transition-all hover:-translate-y-1"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-[#FCFAF5] border border-[#B08D57]/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                      {getIconComponent()}
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#5E6A7A] bg-[#FCFAF5] px-2.5 py-0.5 rounded-full border border-[#0A1D37]/5">
+                      {pa.relatedCategory}
+                    </span>
+                  </div>
+
+                  <h3
+                    onClick={() => navigateTo('practice-areas')}
+                    className="font-serif font-bold text-lg text-[#0A1D37] group-hover:text-[#B08D57] cursor-pointer transition-colors leading-snug"
+                  >
+                    {pa.title}
+                  </h3>
+
+                  <p className="text-xs text-[#5E6A7A] mt-2.5 line-clamp-3 leading-relaxed">
+                    {pa.shortDesc}
+                  </p>
+
+                  <div className="mt-4 pt-3 border-t border-[#0A1D37]/5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#B08D57] block mb-1">
+                      Lead Counsel: {pa.leadCounsel}
+                    </span>
+                    <p className="text-[11px] text-[#39465A] line-clamp-1">
+                      {pa.keyServices[0]}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-4 mt-4 border-t border-[#0A1D37]/5 flex items-center justify-between">
+                  <button
+                    onClick={() => setConsultationOpen(true)}
+                    className="text-xs font-semibold text-[#0A1D37] hover:text-[#B08D57] flex items-center gap-1"
+                  >
+                    <span>Instruct</span>
+                    <ArrowRight className="w-3 h-3 text-[#B08D57]" />
+                  </button>
+
+                  <button
+                    onClick={() => navigateTo('practice-areas')}
+                    className="text-[11px] text-[#5E6A7A] hover:text-[#0A1D37] font-medium"
+                  >
+                    View Frameworks →
+                  </button>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 

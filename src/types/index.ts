@@ -121,8 +121,23 @@ export interface ConsultationInquiry {
   status: 'New' | 'Under Review' | 'Responded';
 }
 
+export interface PracticeArea {
+  id: string;
+  slug: string;
+  title: string;
+  shortDesc: string;
+  fullDesc: string;
+  iconName: string;
+  keyServices: string[];
+  governingFrameworks: string[];
+  leadCounsel: string;
+  relatedCategory: string;
+  courseId?: string;
+}
+
 export type NavigationPath = 
   | 'home'
+  | 'practice-areas'
   | 'courses'
   | 'course-detail'
   | 'blogs'

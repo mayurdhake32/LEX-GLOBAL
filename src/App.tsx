@@ -14,6 +14,7 @@ import { CertificateModal } from './components/CertificateModal';
 
 // Pages
 import { HomePage } from './pages/HomePage';
+import { PracticeAreasPage } from './pages/PracticeAreasPage';
 import { BlogsPage } from './pages/BlogsPage';
 import { BlogDetailPage } from './pages/BlogDetailPage';
 import { CoursesPage } from './pages/CoursesPage';
@@ -28,6 +29,8 @@ const PageRouter: React.FC = () => {
   switch (activeRoute.path) {
     case 'home':
       return <HomePage />;
+    case 'practice-areas':
+      return <PracticeAreasPage />;
     case 'blogs':
       return <BlogsPage />;
     case 'blog-detail':

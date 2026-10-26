@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useApp } from '../context/AppContext';
-import { Search, BookOpen, GraduationCap, Users, FileText, ArrowRight, X } from 'lucide-react';
+import { Search, BookOpen, GraduationCap, Users, FileText, ArrowRight, X, Scale } from 'lucide-react';
 
 export const CommandPalette: React.FC = () => {
   const {
@@ -9,6 +9,7 @@ export const CommandPalette: React.FC = () => {
     courses,
     posts,
     team,
+    practiceAreas,
     navigateTo,
     setBlogEditorPost,
     setConsultationOpen
@@ -72,6 +73,20 @@ export const CommandPalette: React.FC = () => {
       }
     }));
 
+  const matchingPracticeAreas = practiceAreas
+    .filter((pa) => pa.title.toLowerCase().includes(q) || pa.shortDesc.toLowerCase().includes(q) || pa.relatedCategory.toLowerCase().includes(q))
+    .slice(0, 3)
+    .map((pa) => ({
+      id: pa.id,
+      title: pa.title,
+      subtitle: `Practice Area · ${pa.relatedCategory} · Lead: ${pa.leadCounsel}`,
+      icon: Scale,
+      action: () => {
+        navigateTo('practice-areas');
+        setCommandPaletteOpen(false);
+      }
+    }));
+
   const systemActions = [
     {
       id: 'action-write',
@@ -95,7 +110,7 @@ export const CommandPalette: React.FC = () => {
     }
   ].filter((a) => !q || a.title.toLowerCase().includes(q) || a.subtitle.toLowerCase().includes(q));
 
-  const allItems = [...systemActions, ...matchingPosts, ...matchingCourses, ...matchingTeam];
+  const allItems = [...systemActions, ...matchingPracticeAreas, ...matchingPosts, ...matchingCourses, ...matchingTeam];
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') {

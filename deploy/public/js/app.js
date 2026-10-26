@@ -324,6 +324,117 @@ const TEAM = [
   }
 ];
 
+const PRACTICE_AREAS = [
+  {
+    id: 'pa-1',
+    slug: 'international-arbitration',
+    title: 'International Commercial & Treaty Arbitration',
+    category: 'Arbitration',
+    leadCounsel: 'Dr. Amara Okonkwo',
+    shortDesc: 'Advocacy before ICC, LCIA, SIAC, and ICSID tribunals, emergency relief, and worldwide award enforcement under the 1958 New York Convention.',
+    fullDesc: 'Our arbitration practice represents sovereigns, global infrastructure consortia, and multinationals in multi-jurisdictional disputes. We specialize in drafting bulletproof dispute clauses, securing emergency arbitral injunctions, and piercing sovereign immunity shields to execute awards globally.',
+    keyServices: [
+      'Bespoke multi-tiered arbitration agreement drafting',
+      'Seat selection and procedural law optimization (lex arbitri)',
+      'Emergency arbitrator and worldwide freezing order applications',
+      'Article V New York Convention defense and enforcement actions',
+      'Sovereign commercial asset tracing and attachment'
+    ],
+    governingFrameworks: ['1958 New York Convention', 'UNCITRAL Model Law', 'IBA Rules on Evidence', 'ICC & LCIA Rules'],
+    courseSlug: 'international-commercial-arbitration'
+  },
+  {
+    id: 'pa-2',
+    slug: 'cross-border-contracts',
+    title: 'Cross-Border Contracts & Technology Transactions',
+    category: 'Cross-Border Contracts',
+    leadCounsel: 'Adv. Priya Menon',
+    shortDesc: 'Bridging common law and civil law systems in cross-border M&A, technology licensing, supply chains, and governing-law structures.',
+    fullDesc: 'We structure commercial agreements that remain resilient when tested across disparate legal regimes. Our counsel unpicks the divergence between civil law and common law concepts of warranty breach, indemnity causation, and hardship.',
+    keyServices: [
+      'Governing law, jurisdiction, and Rome I Regulation analysis',
+      'Indemnity, consequential loss, and liability cap architecture',
+      'Cross-border SaaS, software licensing, and IP assignments',
+      'International supply agreements under Incoterms 2020 & CISG',
+      'Force majeure and geopolitical sanctions risk mitigation'
+    ],
+    governingFrameworks: ['Rome I & II Regulations', 'Incoterms 2020', 'UN Convention on Contracts for International Sale of Goods (CISG)'],
+    courseSlug: 'cross-border-contract-drafting'
+  },
+  {
+    id: 'pa-3',
+    slug: 'data-privacy-ai',
+    title: 'Global Data Privacy, GDPR & AI Governance',
+    category: 'Data & Privacy',
+    leadCounsel: 'Dr. Sofia Lindqvist',
+    shortDesc: 'Navigating European GDPR, UK GDPR, cross-border transfer mechanisms, and compliance with the emerging EU AI Act.',
+    fullDesc: 'We guide digital enterprises, cloud providers, and global platforms through international regulatory scrutiny, multi-jurisdiction data breach reporting, and rigorous Transfer Impact Assessments.',
+    keyServices: [
+      'Documented Transfer Impact Assessments (TIAs) under Schrems II',
+      'Execution of EU and UK Standard Contractual Clauses (SCCs)',
+      '72-Hour rapid cross-border data breach command and notification',
+      'EU AI Act risk classification and conformity documentation',
+      'Cross-border Data Processing Agreements (DPAs) and sub-processor audits'
+    ],
+    governingFrameworks: ['Regulation (EU) 2016/679 (GDPR)', 'UK Data Protection Act 2018', 'EU Artificial Intelligence Act', 'California CPRA'],
+    courseSlug: 'global-data-privacy-compliance'
+  },
+  {
+    id: 'pa-4',
+    slug: 'consumer-protection',
+    title: 'Cross-Border Consumer Protection & Digital Platforms',
+    category: 'Consumer Protection',
+    leadCounsel: 'Adv. Rohan Desai',
+    shortDesc: 'Defending against unfair trade practices, algorithmic deception, cross-border chargebacks, and marketplace liabilities.',
+    fullDesc: 'As digital commerce transcends national borders, we provide strategic counsel on consumer commission litigation, digital terms of service compliance, and cross-border payment dispute resolution.',
+    keyServices: [
+      'Deceptive design pattern and dark pattern compliance audits',
+      'Consumer commission litigation and representative complaint advocacy',
+      'Card scheme chargeback resolution (Visa & Mastercard dispute codes)',
+      'Marketplace seller terms and unfair contract terms defense',
+      'Multi-currency statutory refund and warranty enforcement'
+    ],
+    governingFrameworks: ['EU Brussels I bis Regulation', 'Consumer Protection Act 2019', 'FTC Unfair and Deceptive Practices Guides'],
+    courseSlug: 'consumer-protection-across-borders'
+  },
+  {
+    id: 'pa-5',
+    slug: 'real-estate-title',
+    title: 'International Real Property & Title Due Diligence',
+    category: 'Real Estate',
+    leadCounsel: 'Adv. Nandita Rao',
+    shortDesc: 'Forensic thirty-year title investigations, agricultural zoning clearances, foreign inward investment compliance, and escrow structuring.',
+    fullDesc: 'We protect institutional property funds, family offices, and diaspora purchasers from disputed title chains, undisclosed encumbrances, and regulatory acquisition hurdles across high-growth corridors.',
+    keyServices: [
+      'Thirty-year root-of-title investigation and forensic deed tracing',
+      'Encumbrance certificate verification and lis pendens court searches',
+      'Foreign Direct Investment (FDI) property structuring and repatriation',
+      'Agricultural land conversion and municipal approval audits',
+      'Institutional closing escrow and title indemnity agreements'
+    ],
+    governingFrameworks: ['Transfer of Property Statutes', 'FDI Regulatory Guidelines', 'Conveyancing & Land Registration Acts'],
+    courseSlug: 'cross-border-real-estate'
+  },
+  {
+    id: 'pa-6',
+    slug: 'legal-writing-advocacy',
+    title: 'Appellate Advocacy & Legal Writing Institute',
+    category: 'Legal Writing',
+    leadCounsel: 'Adv. Sameer Qureshi',
+    shortDesc: 'Refining judicial submissions, appellate briefs, and executive legal memos for maximum persuasive velocity and clarity.',
+    fullDesc: 'Our advocacy institute trains senior practitioners, corporate legal departments, and appellate counsel in the craft of clear, authoritative legal writing that cuts through judicial cognitive fatigue.',
+    keyServices: [
+      'Senior appellate brief formulation and judicial strategy review',
+      'Executive legal memo architecture (BLUF/CREAC methodologies)',
+      'Plain-language redrafting of complex commercial and statutory opinions',
+      'Judicial communication and persuasive oral submission preparation',
+      'Institutional legal drafting handbooks for multinational legal teams'
+    ],
+    governingFrameworks: ['Commonwealth Appellate Practice Rules', 'Plain Language International Standards', 'Supreme Court Practice Directives'],
+    courseSlug: 'legal-writing-global-practice'
+  }
+];
+
 // Helpers
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -453,6 +564,23 @@ async function renderHome() {
       </div>
     </section>
 
+    <!-- Core Practice Areas & Expertise -->
+    <section class="bg-ivory-2">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">International Legal Expertise</span>
+            <h2>Core Practice Areas &amp; Advisory.</h2>
+            <p>Advocacy, strategic counseling, and risk allocation across 42 premier global jurisdictions.</p>
+          </div>
+          <a href="#/practice-areas" class="btn btn-outline">Explore All 6 Practice Areas →</a>
+        </div>
+        <div class="grid-3">
+          ${PRACTICE_AREAS.slice(0, 3).map(practiceAreaCardHtml).join('')}
+        </div>
+      </div>
+    </section>
+
     <!-- Featured Courses -->
     <section>
       <div class="wrap">
@@ -469,10 +597,65 @@ async function renderHome() {
         </div>
       </div>
     </section>
+
+    <!-- Global Legal Bench / Team Section -->
+    <section class="bg-navy">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Our Global Legal Bench</span>
+            <h2>Counsel you can call on.</h2>
+            <p>Senior arbitrators, appellate counsel, and comparative regulatory advisors admitted across international jurisdictions.</p>
+          </div>
+          <a href="#/team" class="btn btn-outline" style="border-color:rgba(247,243,235,0.35); color:var(--ivory);">Meet Full Bench →</a>
+        </div>
+        <div class="grid-3">
+          ${TEAM.slice(0, 3).map(teamCardHtml).join('')}
+        </div>
+      </div>
+    </section>
   `;
 
   $('#homeWriteBtn').onclick = () => openBlogEditorModal();
   bindCardButtons();
+}
+
+function teamCardHtml(t) {
+  return `
+    <article class="card" style="text-align:center; padding:2rem 1.4rem 1.6rem; background:#fff;">
+      <div style="width:110px; height:110px; border-radius:50%; overflow:hidden; margin:0 auto 1.2rem; border:3px solid var(--gold-pale);">
+        <img src="${esc(t.image)}" alt="${esc(t.name)}" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <h3 style="font-family:var(--serif); font-size:1.3rem; color:var(--navy); margin-bottom:0.25rem;">${esc(t.name)}</h3>
+      <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:0.8rem;">${esc(t.role)}</div>
+      <p style="font-size:0.85rem; color:var(--muted); line-height:1.6; margin-bottom:1.2rem;">${esc(t.specialty)} • ${esc(t.experience)}</p>
+      <button class="btn btn-outline btn-sm" data-team="${esc(t.id)}" style="margin-top:auto;">View Full Dossier →</button>
+    </article>
+  `;
+}
+
+function practiceAreaCardHtml(pa) {
+  return `
+    <article class="card" style="padding:1.8rem; background:#fff; display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+          <span class="badge" style="position:static;">${esc(pa.category)}</span>
+          <span style="font-size:0.75rem; color:var(--gold); font-weight:700;">${esc(pa.leadCounsel)}</span>
+        </div>
+        <h3 style="font-family:var(--serif); font-size:1.35rem; color:var(--navy); margin-bottom:0.7rem; line-height:1.2;">
+          <a href="#/practice-areas">${esc(pa.title)}</a>
+        </h3>
+        <p style="font-size:0.85rem; color:var(--muted); line-height:1.6; margin-bottom:1.2rem;">${esc(pa.shortDesc)}</p>
+        <ul style="list-style:none; padding:0; margin:0 0 1.2rem 0; display:grid; gap:0.4rem;">
+          ${pa.keyServices.slice(0, 2).map((s) => `<li style="font-size:0.78rem; color:#39465A; display:flex; gap:0.5rem;"><span style="color:var(--gold);">✓</span>${esc(s)}</li>`).join('')}
+        </ul>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); padding-top:1rem;">
+        <button class="btn btn-outline btn-sm" onclick="openConsultationModal()">Instruct Counsel</button>
+        <a href="#/practice-areas" class="btn btn-ghost btn-sm" style="font-size:0.78rem;">Explore Details →</a>
+      </div>
+    </article>
+  `;
 }
 
 function postCardHtml(p) {
@@ -1134,7 +1317,59 @@ function openConsultationModal() {
   };
 }
 
-// 10. Card Click Handlers
+// 10. Team Bench View
+async function renderTeam() {
+  app.innerHTML = `
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Our Global Legal Bench</span>
+            <h1>Practitioners, Arbitrators & Scholars</h1>
+            <p>Senior advocates admitted before international arbitral institutions and national supreme courts.</p>
+          </div>
+          <button class="btn btn-primary" onclick="openConsultationModal()">Instruct Counsel</button>
+        </div>
+        <div class="grid-3" style="margin-top:2.5rem;">
+          ${TEAM.map(teamCardHtml).join('')}
+        </div>
+      </div>
+    </section>
+  `;
+  bindCardButtons();
+}
+
+function openTeamModal(id) {
+  const member = TEAM.find((t) => t.id === id);
+  if (!member) return;
+  openModal(`
+    <div class="modal-head">
+      <h3 style="color:var(--navy);">${esc(member.name)}</h3>
+      <button class="btn btn-outline btn-sm" data-close>✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:flex; gap:1.4rem; align-items:center; margin-bottom:1.2rem; flex-wrap:wrap;">
+        <img src="${esc(member.image)}" alt="${esc(member.name)}" style="width:96px; height:96px; border-radius:50%; object-fit:cover; border:2px solid var(--gold);">
+        <div>
+          <span style="font-size:0.75rem; color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:0.1em;">${esc(member.role)}</span>
+          <h4 style="color:var(--navy); font-size:1.2rem; margin:0.2rem 0;">${esc(member.specialty)}</h4>
+          <span style="font-size:0.8rem; color:var(--muted);">${esc(member.experience)} in international practice</span>
+        </div>
+      </div>
+      <p style="font-size:0.9rem; color:#39465A; line-height:1.7; margin-bottom:1.4rem;">${esc(member.bio)}</p>
+      <div style="background:var(--ivory-2); padding:1rem; border-radius:10px; border:1px solid var(--line); margin-bottom:1.5rem;">
+        <strong style="display:block; font-size:0.75rem; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem;">Bar & Court Admissions:</strong>
+        <div style="font-size:0.85rem; color:var(--navy);">${member.admissions ? member.admissions.join(' • ') : 'International Practice'}</div>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:0.6rem;">
+        <button class="btn btn-outline" data-close>Close</button>
+        <button class="btn btn-primary" onclick="closeModal(); openConsultationModal();">Instruct Counsel →</button>
+      </div>
+    </div>
+  `);
+}
+
+// 11. Card Click Handlers
 function bindCardButtons() {
   $$('[data-bookmark]').forEach((b) => {
     b.onclick = (e) => {
@@ -1153,6 +1388,81 @@ function bindCardButtons() {
       setBookmarks(bm);
     };
   });
+
+  $$('[data-team]').forEach((b) => {
+    b.onclick = (e) => {
+      e.preventDefault();
+      openTeamModal(b.dataset.team);
+    };
+  });
+}
+
+// 12. Practice Areas & Legal Expertise View
+function renderPracticeAreas() {
+  app.innerHTML = `
+    <section style="padding:3.5rem 0 2rem;">
+      <div class="wrap">
+        <div style="text-align:center; max-width:760px; margin:0 auto 3rem;">
+          <span class="eyebrow" style="justify-content:center;">Specialized Advisory &amp; International Advocacy</span>
+          <h1 style="color:var(--navy); font-size:clamp(2.4rem, 5vw, 3.8rem); margin:0.8rem 0 1rem;">Core Practice Areas &amp; Expertise</h1>
+          <p style="font-size:1.05rem; color:var(--muted); line-height:1.8;">
+            From transnational treaty arbitrations and multi-currency commercial pacts to GDPR transfer impact assessments and forensic title investigations, our partners deliver rigorous, cross-border advocacy.
+          </p>
+          <div style="margin-top:1.5rem; display:flex; justify-content:center; gap:0.8rem; flex-wrap:wrap;">
+            <button class="btn btn-primary" onclick="openConsultationModal()">Submit Confidential Instruction</button>
+            <a href="#/courses" class="btn btn-outline">Explore Masterclasses</a>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap:2rem;">
+          ${PRACTICE_AREAS.map((pa) => `
+            <article class="card" style="padding:2rem; background:#fff; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem;">
+                  <span class="badge" style="position:static;">${esc(pa.category)}</span>
+                  <span style="font-size:0.8rem; color:var(--gold); font-weight:700;">Practice Lead: ${esc(pa.leadCounsel)}</span>
+                </div>
+                <h2 style="font-family:var(--serif); font-size:1.6rem; color:var(--navy); margin-bottom:0.8rem; line-height:1.2;">
+                  ${esc(pa.title)}
+                </h2>
+                <p style="font-size:0.92rem; color:#39465A; line-height:1.7; margin-bottom:1.4rem;">
+                  ${esc(pa.fullDesc)}
+                </p>
+
+                <h4 style="font-family:var(--sans); font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); font-weight:700; margin-bottom:0.6rem;">
+                  Key Representation &amp; Advisory Scope:
+                </h4>
+                <ul style="list-style:none; padding:0; margin:0 0 1.4rem 0; display:grid; gap:0.5rem;">
+                  ${pa.keyServices.map((s) => `
+                    <li style="font-size:0.84rem; color:#39465A; display:flex; gap:0.6rem; line-height:1.5;">
+                      <span style="color:var(--gold); font-weight:bold;">✓</span>
+                      <span>${esc(s)}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+
+                <h4 style="font-family:var(--sans); font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); font-weight:700; margin-bottom:0.6rem;">
+                  Governing Treaties &amp; Frameworks:
+                </h4>
+                <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.5rem;">
+                  ${pa.governingFrameworks.map((f) => `
+                    <span style="font-size:0.74rem; background:var(--ivory-2); border:1px solid var(--line); padding:0.25rem 0.6rem; border-radius:6px; color:var(--navy);">
+                      ${esc(f)}
+                    </span>
+                  `).join('')}
+                </div>
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; padding-top:1.2rem; border-top:1px solid var(--line); flex-wrap:wrap; gap:0.8rem;">
+                <a href="#/course/${esc(pa.courseSlug)}" class="btn btn-outline btn-sm">Accredited Masterclass →</a>
+                <button class="btn btn-primary btn-sm" onclick="openConsultationModal()">Instruct Counsel</button>
+              </div>
+            </article>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+  `;
 }
 
 // ==================== ROUTER & INIT ====================
@@ -1162,10 +1472,12 @@ function router() {
   const parts = hash.split('?')[0].split('/').filter(Boolean);
 
   if (parts.length === 0) { renderHome(); return; }
+  if (parts[0] === 'practice-areas' || parts[0] === 'expertise') { renderPracticeAreas(); return; }
   if (parts[0] === 'blogs') { renderBlogs(); return; }
   if (parts[0] === 'blog' && parts[1]) { renderBlogDetail(parts[1]); return; }
   if (parts[0] === 'courses') { renderCourses(); return; }
   if (parts[0] === 'course' && parts[1]) { renderCourseDetail(parts[1]); return; }
+  if (parts[0] === 'team') { renderTeam(); return; }
   if (parts[0] === 'learn') { renderLearn(); return; }
   if (parts[0] === 'admin') { renderAdmin(); return; }
   renderHome();

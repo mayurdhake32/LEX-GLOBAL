@@ -723,3 +723,122 @@ export const INITIAL_POSTS: BlogPost[] = [
     comments: []
   }
 ];
+
+import { PracticeArea } from '../types';
+
+export const PRACTICE_AREAS: PracticeArea[] = [
+  {
+    id: 'pa-1',
+    slug: 'international-arbitration',
+    title: 'International Commercial & Treaty Arbitration',
+    shortDesc: 'Advocacy before ICC, LCIA, SIAC, and ICSID tribunals, emergency relief, and worldwide award enforcement under the 1958 New York Convention.',
+    fullDesc: 'Our arbitration practice represents sovereigns, global infrastructure consortia, and multinationals in multi-jurisdictional disputes. We specialize in drafting bulletproof dispute clauses, securing emergency arbitral injunctions, and piercing sovereign immunity shields to execute awards globally.',
+    iconName: 'Scale',
+    keyServices: [
+      'Bespoke multi-tiered arbitration agreement drafting',
+      'Seat selection and procedural law optimization (lex arbitri)',
+      'Emergency arbitrator and worldwide freezing order applications',
+      'Article V New York Convention defense and enforcement actions',
+      'Sovereign commercial asset tracing and attachment'
+    ],
+    governingFrameworks: ['1958 New York Convention', 'UNCITRAL Model Law', 'IBA Rules on Taking Evidence', 'ICC & LCIA Rules'],
+    leadCounsel: 'Dr. Amara Okonkwo',
+    relatedCategory: 'Arbitration',
+    courseId: 'c1'
+  },
+  {
+    id: 'pa-2',
+    slug: 'cross-border-contracts',
+    title: 'Cross-Border Contracts & Technology Transactions',
+    shortDesc: 'Bridging common law and civil law systems in cross-border M&A, technology licensing, supply chains, and governing-law structures.',
+    fullDesc: 'We structure commercial agreements that remain resilient when tested across disparate legal regimes. Our counsel unpicks the divergence between civil law and common law concepts of warranty breach, indemnity causation, and hardship.',
+    iconName: 'FileCheck',
+    keyServices: [
+      'Governing law, jurisdiction, and Rome I Regulation analysis',
+      'Indemnity, consequential loss, and liability cap architecture',
+      'Cross-border SaaS, software licensing, and IP assignments',
+      'International supply agreements under Incoterms 2020 & CISG',
+      'Force majeure and geopolitical sanctions risk mitigation'
+    ],
+    governingFrameworks: ['Rome I & II Regulations', 'Incoterms 2020', 'UN Convention on Contracts for International Sale of Goods (CISG)'],
+    leadCounsel: 'Adv. Priya Menon',
+    relatedCategory: 'Cross-Border Contracts',
+    courseId: 'c2'
+  },
+  {
+    id: 'pa-3',
+    slug: 'data-privacy-ai',
+    title: 'Global Data Privacy, GDPR & AI Governance',
+    shortDesc: 'Navigating European GDPR, UK GDPR, cross-border transfer mechanisms, and compliance with the emerging EU AI Act.',
+    fullDesc: 'We guide digital enterprises, cloud providers, and global platforms through international regulatory scrutiny, multi-jurisdiction data breach reporting, and rigorous Transfer Impact Assessments.',
+    iconName: 'Shield',
+    keyServices: [
+      'Documented Transfer Impact Assessments (TIAs) under Schrems II',
+      'Execution of EU and UK Standard Contractual Clauses (SCCs)',
+      '72-Hour rapid cross-border data breach command and notification',
+      'EU AI Act risk classification and conformity documentation',
+      'Cross-border Data Processing Agreements (DPAs) and sub-processor audits'
+    ],
+    governingFrameworks: ['Regulation (EU) 2016/679 (GDPR)', 'UK Data Protection Act 2018', 'EU Artificial Intelligence Act', 'California CPRA'],
+    leadCounsel: 'Dr. Sofia Lindqvist',
+    relatedCategory: 'Data & Privacy',
+    courseId: 'c3'
+  },
+  {
+    id: 'pa-4',
+    slug: 'consumer-protection',
+    title: 'Cross-Border Consumer Protection & Digital Platforms',
+    shortDesc: 'Defending against unfair trade practices, algorithmic deception, cross-border chargebacks, and marketplace liabilities.',
+    fullDesc: 'As digital commerce transcends national borders, we provide strategic counsel on consumer commission litigation, digital terms of service compliance, and cross-border payment dispute resolution.',
+    iconName: 'Users',
+    keyServices: [
+      'Deceptive design pattern and dark pattern compliance audits',
+      'Consumer commission litigation and representative complaint advocacy',
+      'Card scheme chargeback resolution (Visa & Mastercard dispute codes)',
+      'Marketplace seller terms and unfair contract terms defense',
+      'Multi-currency statutory refund and warranty enforcement'
+    ],
+    governingFrameworks: ['EU Brussels I bis Regulation', 'Consumer Protection Act 2019', 'FTC Unfair and Deceptive Practices Guides'],
+    leadCounsel: 'Adv. Rohan Desai',
+    relatedCategory: 'Consumer Protection',
+    courseId: 'c4'
+  },
+  {
+    id: 'pa-5',
+    slug: 'real-estate-title',
+    title: 'International Real Property & Title Due Diligence',
+    shortDesc: 'Forensic thirty-year title investigations, agricultural zoning clearances, foreign inward investment compliance, and escrow structuring.',
+    fullDesc: 'We protect institutional property funds, family offices, and diaspora purchasers from disputed title chains, undisclosed encumbrances, and regulatory acquisition hurdles across high-growth corridors.',
+    iconName: 'Building',
+    keyServices: [
+      'Thirty-year root-of-title investigation and forensic deed tracing',
+      'Encumbrance certificate verification and lis pendens court searches',
+      'Foreign Direct Investment (FDI) property structuring and repatriation',
+      'Agricultural land conversion and municipal approval audits',
+      'Institutional closing escrow and title indemnity agreements'
+    ],
+    governingFrameworks: ['Transfer of Property Statutes', 'FDI Regulatory Guidelines', 'Conveyancing & Land Registration Acts'],
+    leadCounsel: 'Adv. Nandita Rao',
+    relatedCategory: 'Real Estate',
+    courseId: 'c5'
+  },
+  {
+    id: 'pa-6',
+    slug: 'legal-writing-advocacy',
+    title: 'Appellate Advocacy & Legal Writing Institute',
+    shortDesc: 'Refining judicial submissions, appellate briefs, and executive legal memos for maximum persuasive velocity and clarity.',
+    fullDesc: 'Our advocacy institute trains senior practitioners, corporate legal departments, and appellate counsel in the craft of clear, authoritative legal writing that cuts through judicial cognitive fatigue.',
+    iconName: 'PenTool',
+    keyServices: [
+      'Senior appellate brief formulation and judicial strategy review',
+      'Executive legal memo architecture (BLUF/CREAC methodologies)',
+      'Plain-language redrafting of complex commercial and statutory opinions',
+      'Judicial communication and persuasive oral submission preparation',
+      'Institutional legal drafting handbooks for multinational legal teams'
+    ],
+    governingFrameworks: ['Commonwealth Appellate Practice Rules', 'Plain Language International Standards', 'Supreme Court Practice Directives'],
+    leadCounsel: 'Adv. Sameer Qureshi',
+    relatedCategory: 'Legal Writing',
+    courseId: 'c6'
+  }
+];

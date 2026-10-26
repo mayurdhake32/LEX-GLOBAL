@@ -19,6 +19,7 @@ export const Header: React.FC = () => {
 
   const navLinks = [
     { label: 'Home', path: 'home' as const },
+    { label: 'Practice Areas', path: 'practice-areas' as const },
     { label: 'Courses', path: 'courses' as const },
     { label: 'Legal Hub', path: 'blogs' as const },
     { label: 'Team', path: 'team' as const },
