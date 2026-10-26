@@ -1,0 +1,14 @@
+{
+  "name": "lex-global-advocacy-production",
+  "version": "1.0.0",
+  "description": "Lex Global Advocacy — Standalone HTML/CSS/JS & Secure Express Backend",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "dotenv": "^17.2.3"
+  }
+}

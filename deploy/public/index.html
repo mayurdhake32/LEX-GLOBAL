@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lex Global Advocacy — Legal Counsel, Academy & Hub</title>
+  <meta name="description" content="International legal counsel, executive courses, and legal commentary hub.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#/" class="brand">
+        <span class="brand-mark">LGA</span>
+        <span>
+          <span class="brand-name">Lex Global Advocacy</span>
+          <span class="brand-sub">Counsel &amp; Education</span>
+        </span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#/">Home</a>
+        <a href="#/courses">Courses</a>
+        <a href="#/blogs">Legal Hub</a>
+        <a href="#/learn">My Learning</a>
+        <a href="#/admin">Admin CMS</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary btn-sm" id="consultTrigger">Consult Counsel</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+    <div class="wrap mobile-nav" id="mobileNav">
+      <a href="#/">Home</a>
+      <a href="#/courses">Courses</a>
+      <a href="#/blogs">Legal Hub</a>
+      <a href="#/learn">My Learning</a>
+      <a href="#/admin">Admin CMS</a>
+    </div>
+  </header>
+
+  <!-- Dynamic Page Content Container -->
+  <main id="app"></main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom:1rem;">
+            <span class="brand-mark" style="background:transparent; color:#fff; border-color:var(--gold-soft);">LGA</span>
+            <span>
+              <span class="brand-name" style="color:#fff;">Lex Global Advocacy</span>
+              <span class="brand-sub">International Practice</span>
+            </span>
+          </div>
+          <p style="max-width:35ch;">International legal counsel, structured masterclasses, and responsible legal commentary.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <div class="footer-links">
+            <a href="#/courses">Executive Courses</a>
+            <a href="#/blogs">Legal Hub Articles</a>
+            <a href="#/learn">Learning Workspace</a>
+            <a href="#/admin">Admin CMS</a>
+          </div>
+        </div>
+        <div>
+          <h5>Practice Areas</h5>
+          <div class="footer-links">
+            <a href="#/blogs">International Arbitration</a>
+            <a href="#/blogs">Cross-Border Contracts</a>
+            <a href="#/blogs">GDPR &amp; Data Privacy</a>
+            <a href="#/blogs">Consumer Protection</a>
+          </div>
+        </div>
+        <div>
+          <h5>Statutory Notice</h5>
+          <p style="font-size:0.75rem; line-height:1.6;">Content published here is provided solely for academic and educational guidance. It does not constitute individualized legal advice or establish a lawyer-client relationship.</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(247,243,235,0.1); margin-top:3rem; padding-top:1.2rem; font-size:0.75rem; color:rgba(247,243,235,0.45); display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+        <span>© 2026 Lex Global Advocacy Institute. All rights reserved.</span>
+        <span>Secure Standalone Deployment Edition</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Overlays -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modalContent"></div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <!-- Vanilla App Script -->
+  <script src="/js/app.js"></script>
+</body>
+</html>
