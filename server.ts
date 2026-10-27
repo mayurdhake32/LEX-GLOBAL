@@ -317,12 +317,13 @@ app.get('/api/team', (req: Request, res: Response) => {
   res.json(db.team || []);
 });
 
-// Inquiries: Submit (Public, rate limited)
-app.post('/api/inquiries', rateLimiter(60000, 5), (req: Request, res: Response) => {
-  const { name, email, organization, practiceArea, jurisdiction, description, urgency } = req.body;
+// Inquiries & Contact: Submit (Public, rate limited)
+const handleInquirySubmission = (req: Request, res: Response) => {
+  const { name, email, phone, organization, practiceArea, jurisdiction, description, message, subject, urgency } = req.body;
+  const content = description || message || '';
 
-  if (!name || !email || !description) {
-    res.status(400).json({ error: 'Name, email, and description are required.' });
+  if (!name || !email || !content) {
+    res.status(400).json({ error: 'Name, email, and a brief description/message are required.' });
     return;
   }
 
@@ -336,11 +337,13 @@ app.post('/api/inquiries', rateLimiter(60000, 5), (req: Request, res: Response) 
     id: 'inq-' + Date.now(),
     name: sanitizeText(name),
     email: sanitizeText(email),
+    phone: sanitizeText(phone || ''),
+    subject: sanitizeText(subject || ''),
     organization: sanitizeText(organization || 'Individual Party'),
-    practiceArea: sanitizeText(practiceArea || 'International Commercial & Treaty Arbitration'),
+    practiceArea: sanitizeText(practiceArea || 'General Counsel & Advocacy'),
     jurisdiction: sanitizeText(jurisdiction || 'Multi-Jurisdictional'),
     urgency: sanitizeText(urgency || 'Routine'),
-    description: sanitizeText(description),
+    description: sanitizeText(content),
     createdAt: new Date().toISOString(),
     status: 'New'
   };
@@ -354,7 +357,10 @@ app.post('/api/inquiries', rateLimiter(60000, 5), (req: Request, res: Response) 
     message: 'Confidential inquiry submitted successfully.',
     id: newInquiry.id
   });
-});
+};
+
+app.post('/api/inquiries', rateLimiter(60000, 5), handleInquirySubmission);
+app.post('/api/contact', rateLimiter(60000, 5), handleInquirySubmission);
 
 // Inquiries: List (Protected)
 app.get('/api/inquiries', requireAuth, (req: Request, res: Response) => {

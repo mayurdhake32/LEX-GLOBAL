@@ -283,11 +283,12 @@ app.get('/api/team', (req, res) => {
   res.json(db.team || []);
 });
 
-// 5. Confidential Client Intake Inquiries (Rate Limited)
-app.post('/api/inquiries', rateLimiter(60000, 5), (req, res) => {
-  const { name, email, organization, practiceArea, jurisdiction, description, urgency } = req.body;
-  if (!name || !email || !description) {
-    return res.status(400).json({ error: 'Name, email, and synopsis are required.' });
+// 5. Confidential Client Intake Inquiries & Contact (Rate Limited)
+const handleInquiry = (req, res) => {
+  const { name, email, phone, subject, organization, practiceArea, jurisdiction, description, message, urgency } = req.body;
+  const content = description || message || '';
+  if (!name || !email || !content) {
+    return res.status(400).json({ error: 'Name, email, and message or synopsis are required.' });
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -299,11 +300,13 @@ app.post('/api/inquiries', rateLimiter(60000, 5), (req, res) => {
     id: 'inq-' + Date.now(),
     name: sanitizeText(name),
     email: sanitizeText(email),
+    phone: sanitizeText(phone || ''),
+    subject: sanitizeText(subject || ''),
     organization: sanitizeText(organization || 'Individual Party'),
-    practiceArea: sanitizeText(practiceArea || 'International Arbitration'),
+    practiceArea: sanitizeText(practiceArea || 'General Counsel & Advocacy'),
     jurisdiction: sanitizeText(jurisdiction || 'Multi-Jurisdictional'),
     urgency: sanitizeText(urgency || 'Routine'),
-    description: sanitizeText(description),
+    description: sanitizeText(content),
     createdAt: new Date().toISOString(),
     status: 'New'
   };
@@ -317,7 +320,10 @@ app.post('/api/inquiries', rateLimiter(60000, 5), (req, res) => {
     message: 'Confidential inquiry submitted successfully.',
     id: newInquiry.id
   });
-});
+};
+
+app.post('/api/inquiries', rateLimiter(60000, 5), handleInquiry);
+app.post('/api/contact', rateLimiter(60000, 5), handleInquiry);
 
 app.get('/api/inquiries', requireAuth, (req, res) => {
   const db = readDb();
