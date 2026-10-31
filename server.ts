@@ -3,6 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import crypto from 'crypto';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { createServer as createViteServer } from 'vite';
 
 dotenv.config();
@@ -46,6 +47,9 @@ function rateLimiter(windowMs: number, maxRequests: number) {
   };
 }
 
+// Enable CORS for all origins (permits separate frontend hosting e.g. Vercel, Netlify)
+app.use(cors());
+
 // Security Headers Middleware (Permit iframe embedding for AI Studio preview)
 app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -61,13 +65,19 @@ app.use(express.urlencoded({ extended: true }));
 function readDb() {
   try {
     if (!fs.existsSync(DB_PATH)) {
-      return { posts: [], courses: [], team: [], inquiries: [] };
+      return { posts: [], courses: [], team: [], inquiries: [], enrollments: [] };
     }
     const raw = fs.readFileSync(DB_PATH, 'utf-8');
-    return JSON.parse(raw);
+    const data = JSON.parse(raw);
+    data.posts = data.posts || [];
+    data.courses = data.courses || [];
+    data.team = data.team || [];
+    data.inquiries = data.inquiries || [];
+    data.enrollments = data.enrollments || [];
+    return data;
   } catch (err) {
     console.error('Error reading DB:', err);
-    return { posts: [], courses: [], team: [], inquiries: [] };
+    return { posts: [], courses: [], team: [], inquiries: [], enrollments: [] };
   }
 }
 
@@ -100,14 +110,15 @@ function sanitizeText(str: string): string {
   return str.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').trim();
 }
 
-// ==================== API ROUTES ====================
+// ==================== AUTHENTICATION ROUTES ====================
 
 // Auth: Login
 app.post('/api/auth/login', rateLimiter(60000, 10), (req: Request, res: Response) => {
-  const { password } = req.body;
+  const { username, password } = req.body;
   const db = readDb();
   const validPw = db.adminPassword || ADMIN_PASSWORD;
 
+  // Accept username 'admin' or direct password match
   if (password === validPw) {
     const token = crypto.randomBytes(32).toString('hex');
     activeSessions.add(token);
@@ -124,7 +135,7 @@ app.get('/api/auth/verify', (req: Request, res: Response) => {
   res.json({ authenticated: activeSessions.has(token) });
 });
 
-// Auth: Change password
+// Auth: Change password (Protected)
 app.post('/api/auth/password', requireAuth, (req: Request, res: Response) => {
   const { newPassword } = req.body;
   if (!newPassword || newPassword.length < 8) {
@@ -134,8 +145,10 @@ app.post('/api/auth/password', requireAuth, (req: Request, res: Response) => {
   const db = readDb();
   db.adminPassword = newPassword;
   writeDb(db);
-  res.json({ success: true, message: 'Password updated successfully.' });
+  res.json({ success: true, message: 'Admin password updated successfully.' });
 });
+
+// ==================== BLOGS & PUBLICATIONS ROUTES ====================
 
 // Blogs: List
 app.get('/api/blogs', (req: Request, res: Response) => {
@@ -148,15 +161,14 @@ app.get('/api/blogs', (req: Request, res: Response) => {
   res.json(posts || []);
 });
 
-// Blogs: Get by Slug
+// Blogs: Get by Slug or ID
 app.get('/api/blogs/:slug', (req: Request, res: Response) => {
   const db = readDb();
-  const post = (db.posts || []).find((p: any) => p.slug === req.params.slug);
+  const post = (db.posts || []).find((p: any) => p.slug === req.params.slug || p.id === req.params.slug);
   if (!post) {
     res.status(404).json({ error: 'Article not found.' });
     return;
   }
-  // Increment view count
   post.views = (post.views || 0) + 1;
   writeDb(db);
   res.json(post);
@@ -173,11 +185,6 @@ app.post('/api/blogs', requireAuth, (req: Request, res: Response) => {
 
   const slug = (req.body.slug || title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   const db = readDb();
-
-  if (db.posts.some((p: any) => p.slug === slug)) {
-    res.status(409).json({ error: 'An article with this slug already exists.' });
-    return;
-  }
 
   const newPost = {
     id: 'p-' + Date.now(),
@@ -250,60 +257,23 @@ app.delete('/api/blogs/:id', requireAuth, (req: Request, res: Response) => {
   res.json({ success: true, message: 'Article deleted successfully.' });
 });
 
-// Blogs: Like (Public)
-app.post('/api/blogs/:id/like', rateLimiter(10000, 5), (req: Request, res: Response) => {
-  const db = readDb();
-  const post = db.posts.find((p: any) => p.id === req.params.id);
-  if (!post) {
-    res.status(404).json({ error: 'Article not found.' });
-    return;
-  }
-  post.likes = (post.likes || 0) + 1;
-  writeDb(db);
-  res.json({ likes: post.likes });
-});
-
-// Blogs: Add Comment (Public)
-app.post('/api/blogs/:id/comments', rateLimiter(30000, 5), (req: Request, res: Response) => {
-  const { author, content } = req.body;
-  if (!content) {
-    res.status(400).json({ error: 'Comment content cannot be empty.' });
-    return;
-  }
-
-  const db = readDb();
-  const post = db.posts.find((p: any) => p.id === req.params.id);
-  if (!post) {
-    res.status(404).json({ error: 'Article not found.' });
-    return;
-  }
-
-  const newComment = {
-    id: 'cm-' + Date.now(),
-    author: sanitizeText(author || 'Legal Practitioner'),
-    avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
-    date: new Date().toISOString().slice(0, 10),
-    content: sanitizeText(content),
-    likes: 0,
-    replies: []
-  };
-
-  post.comments = post.comments || [];
-  post.comments.unshift(newComment);
-  writeDb(db);
-  res.status(201).json(newComment);
-});
+// ==================== COURSES & ACADEMY ROUTES ====================
 
 // Courses: List
 app.get('/api/courses', (req: Request, res: Response) => {
   const db = readDb();
-  res.json(db.courses || []);
+  const authHeader = req.headers.authorization || '';
+  const token = authHeader.replace(/^Bearer\s+/i, '').trim();
+  const isAdmin = activeSessions.has(token);
+
+  const courses = isAdmin ? db.courses : (db.courses || []).filter((c: any) => c.published !== false);
+  res.json(courses || []);
 });
 
-// Courses: Get by Slug
+// Courses: Get by Slug or ID
 app.get('/api/courses/:slug', (req: Request, res: Response) => {
   const db = readDb();
-  const course = (db.courses || []).find((c: any) => c.slug === req.params.slug);
+  const course = (db.courses || []).find((c: any) => c.slug === req.params.slug || c.id === req.params.slug);
   if (!course) {
     res.status(404).json({ error: 'Course not found.' });
     return;
@@ -311,13 +281,132 @@ app.get('/api/courses/:slug', (req: Request, res: Response) => {
   res.json(course);
 });
 
-// Team: List
-app.get('/api/team', (req: Request, res: Response) => {
+// Courses: Create / Update (Protected)
+app.post('/api/courses', requireAuth, (req: Request, res: Response) => {
+  const { title, slug, category, level, duration, price, instructor, instructorTitle, instructorAvatar, image, description, outcomes, curriculum, published } = req.body;
+
+  if (!title) {
+    res.status(400).json({ error: 'Course title is required.' });
+    return;
+  }
+
+  const courseSlug = (slug || title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   const db = readDb();
-  res.json(db.team || []);
+
+  const newCourse = {
+    id: 'c-' + Date.now(),
+    slug: courseSlug,
+    title: sanitizeText(title),
+    category: sanitizeText(category || 'General Legal Practice'),
+    level: sanitizeText(level || 'Masterclass'),
+    duration: sanitizeText(duration || '6 weeks · 18 lectures'),
+    price: Number(price) || 0,
+    currency: 'INR',
+    instructor: sanitizeText(instructor || 'Senior Partner'),
+    instructorTitle: sanitizeText(instructorTitle || 'Executive Faculty'),
+    instructorAvatar: instructorAvatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+    rating: 4.9,
+    students: 1,
+    image: image || 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=80',
+    description: sanitizeText(description || ''),
+    accreditation: 'Accredited by Global Bar CLE Council',
+    outcomes: Array.isArray(outcomes) ? outcomes.map((o: string) => sanitizeText(o)) : [],
+    curriculum: Array.isArray(curriculum) ? curriculum : [],
+    published: published !== false
+  };
+
+  db.courses.unshift(newCourse);
+  writeDb(db);
+  res.status(201).json(newCourse);
 });
 
-// Inquiries & Contact: Submit (Public, rate limited)
+// Courses: Delete (Protected)
+app.delete('/api/courses/:id', requireAuth, (req: Request, res: Response) => {
+  const db = readDb();
+  const initialLen = db.courses.length;
+  db.courses = db.courses.filter((c: any) => c.id !== req.params.id);
+
+  if (db.courses.length === initialLen) {
+    res.status(404).json({ error: 'Course not found.' });
+    return;
+  }
+
+  writeDb(db);
+  res.json({ success: true, message: 'Course deleted successfully.' });
+});
+
+// Courses: Student Enrollment (Public, rate limited)
+app.post('/api/courses/enroll', rateLimiter(60000, 10), (req: Request, res: Response) => {
+  const { courseId, courseSlug, name, email, phone, organization, mode, note } = req.body;
+
+  if (!name || !email) {
+    res.status(400).json({ error: 'Student full name and a valid email are required.' });
+    return;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    res.status(400).json({ error: 'A valid email address is required.' });
+    return;
+  }
+
+  const db = readDb();
+  const matchedCourse = (db.courses || []).find((c: any) => c.id === courseId || c.slug === courseSlug);
+  const courseTitle = matchedCourse ? matchedCourse.title : (req.body.courseTitle || 'Executive Legal Masterclass');
+
+  const enrollmentId = 'ENR-' + Date.now();
+  const studentId = 'LGA-ACAD-' + Math.floor(1000 + Math.random() * 9000);
+
+  const newEnrollment = {
+    id: enrollmentId,
+    courseId: courseId || (matchedCourse ? matchedCourse.id : 'c1'),
+    courseTitle,
+    name: sanitizeText(name),
+    email: sanitizeText(email),
+    phone: sanitizeText(phone || ''),
+    organization: sanitizeText(organization || 'Individual Practitioner'),
+    mode: sanitizeText(mode || 'Live Interactive Weekend Cohort'),
+    note: sanitizeText(note || ''),
+    status: 'Confirmed',
+    enrolledAt: new Date().toISOString(),
+    studentId
+  };
+
+  db.enrollments = db.enrollments || [];
+  db.enrollments.unshift(newEnrollment);
+
+  // Increment course student count if matched
+  if (matchedCourse) {
+    matchedCourse.students = (matchedCourse.students || 0) + 1;
+  }
+
+  writeDb(db);
+
+  res.status(201).json({
+    success: true,
+    message: 'Enrollment confirmed successfully.',
+    enrollmentId,
+    studentId,
+    courseTitle,
+    enrolledAt: newEnrollment.enrolledAt
+  });
+});
+
+// Enrollments: List (Protected)
+app.get('/api/enrollments', requireAuth, (req: Request, res: Response) => {
+  const db = readDb();
+  res.json(db.enrollments || []);
+});
+
+// Enrollments: Delete (Protected)
+app.delete('/api/enrollments/:id', requireAuth, (req: Request, res: Response) => {
+  const db = readDb();
+  db.enrollments = (db.enrollments || []).filter((e: any) => e.id !== req.params.id);
+  writeDb(db);
+  res.json({ success: true, message: 'Enrollment record removed.' });
+});
+
+// ==================== INQUIRIES & CONTACT ROUTES ====================
+
 const handleInquirySubmission = (req: Request, res: Response) => {
   const { name, email, phone, organization, practiceArea, jurisdiction, description, message, subject, urgency } = req.body;
   const content = description || message || '';
@@ -359,13 +448,73 @@ const handleInquirySubmission = (req: Request, res: Response) => {
   });
 };
 
-app.post('/api/inquiries', rateLimiter(60000, 5), handleInquirySubmission);
-app.post('/api/contact', rateLimiter(60000, 5), handleInquirySubmission);
+app.post('/api/inquiries', rateLimiter(60000, 10), handleInquirySubmission);
+app.post('/api/contact', rateLimiter(60000, 10), handleInquirySubmission);
 
 // Inquiries: List (Protected)
 app.get('/api/inquiries', requireAuth, (req: Request, res: Response) => {
   const db = readDb();
   res.json(db.inquiries || []);
+});
+
+// Inquiries: Update Status (Protected)
+app.put('/api/inquiries/:id', requireAuth, (req: Request, res: Response) => {
+  const { status } = req.body;
+  const db = readDb();
+  const inq = (db.inquiries || []).find((i: any) => i.id === req.params.id);
+  if (!inq) {
+    res.status(404).json({ error: 'Inquiry not found.' });
+    return;
+  }
+  inq.status = sanitizeText(status || inq.status);
+  writeDb(db);
+  res.json(inq);
+});
+
+// Inquiries: Delete (Protected)
+app.delete('/api/inquiries/:id', requireAuth, (req: Request, res: Response) => {
+  const db = readDb();
+  db.inquiries = (db.inquiries || []).filter((i: any) => i.id !== req.params.id);
+  writeDb(db);
+  res.json({ success: true, message: 'Inquiry removed.' });
+});
+
+// ==================== ADMIN PORTAL DASHBOARD STATS & EXPORT ====================
+
+app.get('/api/admin/stats', requireAuth, (req: Request, res: Response) => {
+  const db = readDb();
+  res.json({
+    totalInquiries: (db.inquiries || []).length,
+    newInquiries: (db.inquiries || []).filter((i: any) => i.status === 'New').length,
+    totalEnrollments: (db.enrollments || []).length,
+    totalCourses: (db.courses || []).length,
+    totalPosts: (db.posts || []).length
+  });
+});
+
+app.get('/api/admin/export', requireAuth, (req: Request, res: Response) => {
+  const db = readDb();
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Disposition', 'attachment; filename="lex-global-backup.json"');
+  res.send(JSON.stringify(db, null, 2));
+});
+
+// Team: List
+app.get('/api/team', (req: Request, res: Response) => {
+  const db = readDb();
+  res.json(db.team || []);
+});
+
+// ==================== ADMIN PORTAL SERVING ====================
+
+// Serve admin.html directly on /admin or /admin.html
+app.get(['/admin', '/admin.html'], (req: Request, res: Response) => {
+  const adminFile = path.resolve(process.cwd(), 'admin.html');
+  if (fs.existsSync(adminFile)) {
+    res.sendFile(adminFile);
+  } else {
+    res.redirect('/');
+  }
 });
 
 // ==================== FRONTEND SERVING ====================
@@ -390,6 +539,7 @@ async function startServer() {
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Lex Global Advocacy Server running on http://0.0.0.0:${PORT}`);
+    console.log(`Admin Portal accessible at http://0.0.0.0:${PORT}/admin.html`);
   });
 }
 

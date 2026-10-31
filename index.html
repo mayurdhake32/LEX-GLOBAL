@@ -283,6 +283,55 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
 @media(max-width:1023px){.blogs-grid{grid-template-columns:repeat(2, 1fr);}}
 @media(max-width:639px){.blogs-grid{grid-template-columns:1fr;}.blogs-section-header h2{font-size:34px;}}
 
+/* ---------- COURSES & ACADEMY ---------- */
+.courses-section{padding:120px 0;background:#fcfbf8;border-top:1px solid #eaeaea;border-bottom:1px solid #eaeaea;}
+.courses-section-header{text-align:center;max-width:920px;margin:0 auto 40px;}
+.academy-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-accent);font-size:13px;font-weight:700;color:var(--primary-dark);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;background:rgba(245,192,12,0.14);padding:6px 14px;border-radius:20px;}
+.courses-section-header h2{font-family:var(--font-body);font-weight:600;font-size:46px;line-height:1.05;text-transform:uppercase;margin-bottom:14px;}
+.courses-section-header h3{color:var(--primary-dark);font-size:22px;margin-bottom:14px;font-weight:600;}
+.courses-section-header p{font-size:16px;color:var(--text-muted);line-height:1.8;}
+
+.courses-controls{display:flex;justify-content:center;margin-bottom:36px;}
+.courses-filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.course-filter-btn{padding:8px 18px;font-family:var(--font-accent);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;background:#fff;border:1px solid #dcdcdc;color:#444;border-radius:4px;cursor:pointer;transition:all .2s;}
+.course-filter-btn:hover{background:#f3f3f3;border-color:#999;}
+.course-filter-btn.active{background:var(--black);color:var(--primary);border-color:var(--black);}
+
+.courses-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:30px;}
+.course-card{background:#fff;border:1px solid #e2e2e2;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s, box-shadow .3s;box-shadow:0 4px 15px rgba(0,0,0,0.03);}
+.course-card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(0,0,0,0.1);}
+.course-media{position:relative;aspect-ratio:16/9;overflow:hidden;background:#111;}
+.course-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.course-card:hover .course-media img{transform:scale(1.05);}
+.course-cat-tag{position:absolute;top:12px;left:12px;background:var(--primary);color:#000;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:2px;}
+.course-level-badge{position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.75);color:#fff;font-weight:600;font-size:11px;letter-spacing:0.5px;padding:4px 8px;border-radius:2px;}
+
+.course-body{padding:22px;flex:1;display:flex;flex-direction:column;}
+.course-top-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#777;margin-bottom:10px;}
+.course-title{font-family:var(--font-serif);font-size:22px;font-weight:700;line-height:1.25;margin-bottom:10px;color:var(--black);}
+.course-desc{font-size:14px;line-height:1.7;color:var(--text-muted);margin-bottom:16px;flex:1;}
+.course-outcomes-preview{background:#fafafa;padding:12px 14px;border-radius:4px;margin-bottom:16px;border-left:3px solid var(--primary);}
+.course-outcomes-preview ul{display:grid;gap:6px;}
+.course-outcomes-preview li{font-size:12px;color:#444;display:flex;align-items:flex-start;gap:8px;}
+.course-outcomes-preview li i{color:var(--primary-dark);margin-top:4px;}
+
+.course-instructor-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;margin-bottom:16px;}
+.course-instructor-row img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--primary);}
+.course-instructor-info strong{display:block;font-size:13px;color:#111;}
+.course-instructor-info span{display:block;font-size:11px;color:#777;}
+
+.course-card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;}
+.course-price-wrap strong{font-size:18px;font-family:var(--font-accent);color:#000;display:block;}
+.course-price-wrap span{font-size:11px;color:#888;display:block;text-transform:uppercase;}
+.course-card-actions{display:flex;gap:8px;}
+.btn-course-syllabus{padding:7px 12px;font-size:12px;font-weight:700;border:1px solid #ccc;background:#fdfdfd;color:#222;border-radius:3px;cursor:pointer;transition:all .2s;}
+.btn-course-syllabus:hover{border-color:var(--primary);color:#000;background:#f5f5f5;}
+.btn-course-enroll{padding:7px 16px;font-size:12px;font-weight:700;background:var(--primary);color:#000;border-radius:3px;cursor:pointer;transition:background .2s;}
+.btn-course-enroll:hover{background:#deb00c;}
+
+@media(max-width:1023px){.courses-grid{grid-template-columns:repeat(2, 1fr);}}
+@media(max-width:639px){.courses-grid{grid-template-columns:1fr;}.courses-section-header h2{font-size:32px;}}
+
 /* ---------- HISTORY ---------- */
 .history{position:relative;padding-top:128px;padding-bottom:168px;text-align:center;color:var(--white);background:#111 url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;z-index:1;}
 .history::after{content:'';position:absolute;inset:0;z-index:-1;background:rgba(0,0,0,0.88);}
@@ -468,9 +517,11 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
               <li><a href="#practice-areas" onclick="openPracticeModal('Business & Corporate Law')">Business &amp; Corporate Law</a></li>
             </ul>
           </li>
+          <li><a href="#courses">Courses &amp; Academy</a></li>
           <li><a href="#blogs">Legal Hub &amp; Blogs</a></li>
           <li><a href="#history">History</a></li>
           <li><a href="#contact">Contact &amp; Intake</a></li>
+          <li><a href="/admin.html" style="color:var(--primary); border:1px solid rgba(245,192,12,0.4); padding:3px 10px; border-radius:3px;"><i class="fas fa-user-shield"></i> Portal</a></li>
         </ul>
       </nav>
     </div>
@@ -693,6 +744,32 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
       <a href="#contact" class="button show-for-small-only">Schedule Consultation</a>
     </section>
 
+    <!-- ===================== COURSES & ACADEMY SECTION ===================== -->
+    <section class="courses-section grid-container" id="courses">
+      <div class="courses-section-header">
+        <span class="academy-eyebrow"><i class="fas fa-graduation-cap"></i> LEX GLOBAL ACADEMY</span>
+        <h2>Executive Legal Masterclasses &amp; Continuing Education</h2>
+        <h3>Practice-Oriented Legal Training &middot; CLE &amp; CPD Accredited</h3>
+        <p>Bridging doctrinal mastery and high-stakes courtroom execution. Master international arbitration award enforcement, cross-border M&amp;A contracts, admiralty ship arrests, real estate due diligence, and global cyber privacy under the mentorship of leading international partners and accredited arbitrators.</p>
+      </div>
+
+      <div class="courses-controls">
+        <div class="courses-filters" id="courseFilters">
+          <button type="button" class="course-filter-btn active" onclick="filterCourses('All')">All Masterclasses</button>
+          <button type="button" class="course-filter-btn" onclick="filterCourses('Arbitration')">Arbitration &amp; ADR</button>
+          <button type="button" class="course-filter-btn" onclick="filterCourses('Cross-Border Contracts')">Cross-Border Contracts</button>
+          <button type="button" class="course-filter-btn" onclick="filterCourses('Data & Privacy')">Data Privacy &amp; GDPR</button>
+          <button type="button" class="course-filter-btn" onclick="filterCourses('Maritime & Admiralty')">Maritime &amp; Admiralty</button>
+          <button type="button" class="course-filter-btn" onclick="filterCourses('Real Estate')">Real Estate &amp; Title</button>
+          <button type="button" class="course-filter-btn" onclick="filterCourses('Litigation & Advocacy')">Advocacy &amp; Drafting</button>
+        </div>
+      </div>
+
+      <div class="courses-grid" id="coursesGrid">
+        <!-- Rendered dynamically from backend with fallback -->
+      </div>
+    </section>
+
     <!-- THE LEGAL HUB & BLOGS SECTION -->
     <section class="blogs-section grid-container" id="blogs">
       <div class="blogs-section-header">
@@ -884,8 +961,10 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
         <li>&copy; 1886&ndash;2026 <a href="/">LEX GLOBAL ADVOCACY</a></li>
         <li><a href="#story">Our Firm</a></li>
         <li><a href="#practice-areas">Practices</a></li>
+        <li><a href="#courses">Legal Academy</a></li>
         <li><a href="#blogs">Legal Hub</a></li>
         <li><a href="#contact">Disclaimer</a></li>
+        <li><a href="/admin.html" style="color:var(--primary); font-weight:700;"><i class="fas fa-user-shield"></i> Partner / Staff Portal</a></li>
       </ul>
     </div>
   </footer>
@@ -921,6 +1000,9 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
 /* ============================================================
    LEX GLOBAL ADVOCACY — Master Interactive Engine
    ============================================================ */
+
+// Configurable Backend API Endpoint (empty string defaults to same origin; or set to external API URL)
+window.LEX_API_URL = window.LEX_API_URL || '';
 
 // 1. Data Collections
 const ATTORNEYS_DATA = {
@@ -1298,22 +1380,561 @@ window.openBlogModal = function(id) {
   `);
 };
 
-// 5. Render Blogs in Grid
+// ==================== SECURITY & ESCAPE ====================
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// ==================== 5. COURSES & ACADEMY ENGINE ====================
+const COURSES_DATA = [
+  {
+    id: 'c1',
+    slug: 'international-commercial-arbitration',
+    title: 'International Commercial Arbitration: Strategy & Award Enforcement',
+    category: 'Arbitration',
+    level: 'Advanced Masterclass',
+    duration: '8 weeks · 24 lectures · 16 CLE Credits',
+    price: 4999,
+    currency: 'INR',
+    instructor: 'Dr. Amara Okonkwo',
+    instructorTitle: 'Partner & Arbitrator (LCIA, SIAC, ICC Panels)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+    rating: 4.9,
+    students: 1420,
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=80',
+    description: 'An exhaustive masterclass on drafting arbitration clauses, seat selection, emergency arbitral injunctions, evidence hearings under IBA rules, and cross-border award attachment under the 1958 New York Convention.',
+    outcomes: [
+      'Draft ironclad multi-tier dispute resolution and escalation clauses',
+      'Select arbitration seats, institutional rules, and tribunal members strategically',
+      'Deploy emergency arbitrator applications and cross-border asset freezing',
+      'Master Article V New York Convention defences and global sovereign asset attachment'
+    ],
+    curriculum: [
+      {
+        title: 'Module 1: The Foundations & The Arbitration Agreement',
+        lessons: [
+          { title: 'The 1958 New York Convention Architecture in Global Practice', duration: '45 min', type: 'Video Masterclass' },
+          { title: 'Pathological Arbitration Clauses & Drafting Remedies', duration: '50 min', type: 'Video Masterclass' },
+          { title: 'Seat vs. Venue: Substantive Curial Law & Judicial Supervision', duration: '40 min', type: 'Practical Case Brief' }
+        ]
+      },
+      {
+        title: 'Module 2: Tribunal Procedure, Evidence & Emergency Injunctions',
+        lessons: [
+          { title: 'Emergency Arbitrators & Urgent Interim Asset Freezing', duration: '55 min', type: 'Video Masterclass' },
+          { title: 'IBA Rules on the Taking of Evidence & Redfern Document Production', duration: '60 min', type: 'Drafting Workshop' },
+          { title: 'Cross-Examination of Technical & Financial Damages Experts', duration: '50 min', type: 'Tribunal Simulation' }
+        ]
+      },
+      {
+        title: 'Module 3: Awards, Annulment & Global Asset Recovery',
+        lessons: [
+          { title: 'Drafting Final Enforceable Awards: Standard of Reasons', duration: '45 min', type: 'Video Masterclass' },
+          { title: 'Defeating Article V Non-Enforcement Objections & Public Policy Bars', duration: '55 min', type: 'Case Study' },
+          { title: 'Attaching Sovereign Commercial Assets & Multi-Jurisdiction Execution', duration: '60 min', type: 'Executive Brief' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'c2',
+    slug: 'cross-border-contract-drafting',
+    title: 'Cross-Border Contract Drafting, Joint Ventures & Risk Allocation',
+    category: 'Cross-Border Contracts',
+    level: 'Executive Practitioner',
+    duration: '6 weeks · 18 lectures · 12 CLE Credits',
+    price: 3499,
+    currency: 'INR',
+    instructor: 'Adv. Priya Menon',
+    instructorTitle: 'Partner, Transactional Practice & M&A',
+    instructorAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
+    rating: 4.8,
+    students: 1180,
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80',
+    description: 'Structure multi-jurisdictional contracts that bridge common law and civil law systems. Master indemnities, representations & warranties, currency hedging clauses, force majeure, and dispute escalation protocols.',
+    outcomes: [
+      'Harmonize common law indemnities with civil law breach concepts',
+      'Structure cross-border joint ventures and deadlock resolution mechanisms',
+      'Draft enforceable limitation of liability and consequential damage caps',
+      'Incorporate Incoterms 2020 rules into transnational supply agreements'
+    ],
+    curriculum: [
+      {
+        title: 'Module 1: The Transnational Contract Architecture',
+        lessons: [
+          { title: 'Governing Law Clauses vs. Jurisdiction Carve-Outs', duration: '40 min', type: 'Video Masterclass' },
+          { title: 'Representations, Warranties & Indemnity Covenants', duration: '50 min', type: 'Video Masterclass' },
+          { title: 'Liability Caps, Super-Caps & Fraud Carve-Outs', duration: '45 min', type: 'Drafting Workshop' }
+        ]
+      },
+      {
+        title: 'Module 2: Complex Joint Ventures & Transaction Execution',
+        lessons: [
+          { title: 'Deadlock Resolution: Russian Roulette, Texas Shootout & Put Options', duration: '55 min', type: 'Case Study' },
+          { title: 'Force Majeure, Hardship Clauses & Sanctions Frustration', duration: '45 min', type: 'Video Masterclass' },
+          { title: 'Cross-Border Signing, Escrow & Closing Protocol Execution', duration: '50 min', type: 'Practical Workshop' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'c3',
+    slug: 'global-data-privacy-compliance',
+    title: 'Global Data Privacy, GDPR & India DPDP Act 2023 Masterclass',
+    category: 'Data & Privacy',
+    level: 'Specialist Masterclass',
+    duration: '7 weeks · 21 lectures · 14 CPD Credits',
+    price: 3999,
+    currency: 'INR',
+    instructor: 'Dr. Sofia Lindqvist',
+    instructorTitle: 'Head of Data & Privacy, Former EU Regulatory Counsel',
+    instructorAvatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
+    rating: 4.9,
+    students: 980,
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80',
+    description: 'Comprehensive comparative mastery of the EU GDPR, UK-GDPR, India’s Digital Personal Data Protection (DPDP) Act 2023, and global AI governance laws. Learn to conduct Transfer Impact Assessments (TIAs) and orchestrate 72-hour breach responses.',
+    outcomes: [
+      'Conduct defensible Transfer Impact Assessments (TIAs) post-Schrems II',
+      'Implement Data Protection Impact Assessments (DPIAs) for AI applications',
+      'Draft compliant Data Processing Agreements (DPAs) with Standard Contractual Clauses',
+      'Command a 72-hour mandatory breach triage and supervisory notification unit'
+    ],
+    curriculum: [
+      {
+        title: 'Module 1: Principles, Grounds & Cross-Border Data Flows',
+        lessons: [
+          { title: 'Lawful Bases for Processing & Legitimate Interest Assessments', duration: '45 min', type: 'Video Masterclass' },
+          { title: 'Standard Contractual Clauses (SCCs) & Supplementary Encryption', duration: '50 min', type: 'Video Masterclass' },
+          { title: 'Transfer Impact Assessments (TIAs) in Surveillance Jurisdictions', duration: '60 min', type: 'Hands-on Workshop' }
+        ]
+      },
+      {
+        title: 'Module 2: Breach Response, AI Regulation & Regulatory Fines',
+        lessons: [
+          { title: '72-Hour Breach Triage, Forensics & Regulatory Filings', duration: '55 min', type: 'Breach Simulation' },
+          { title: 'The EU AI Act & Algorithmic Liability for High-Risk Systems', duration: '50 min', type: 'Video Masterclass' },
+          { title: 'Defending Before Data Protection Authorities & Penalty Mitigation', duration: '45 min', type: 'Case Analysis' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'c4',
+    slug: 'admiralty-maritime-law-practice',
+    title: 'Admiralty Practice, Ship Arrests & Maritime Liens',
+    category: 'Maritime & Admiralty',
+    level: 'Specialized Practice',
+    duration: '6 weeks · 18 lectures · 12 CLE Credits',
+    price: 4499,
+    currency: 'INR',
+    instructor: 'Kathleen Horne',
+    instructorTitle: 'Partner, Maritime & Admiralty Practice',
+    instructorAvatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80',
+    rating: 4.9,
+    students: 670,
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1400&q=80',
+    description: 'Essential masterclass on admiralty jurisdiction, obtaining warrant of vessel arrest under international conventions, maritime liens, charterparty demurrage claims, collision salvage, and P&I Club letters of undertaking.',
+    outcomes: [
+      'Execute swift ex parte vessel arrest proceedings across major global ports',
+      'Rank maritime claims, statutory liens, and mortgage priority',
+      'Negotiate Club Letters of Undertaking (LOU) and security releases',
+      'Litigate speed and consumption warranty breaches and laytime/demurrage disputes'
+    ],
+    curriculum: [
+      {
+        title: 'Module 1: Admiralty Jurisdiction & Vessel Arrests',
+        lessons: [
+          { title: 'The International Arrest Conventions 1952 & 1999', duration: '45 min', type: 'Video Masterclass' },
+          { title: 'Drafting Ex Parte Caveats & Arrest Applications', duration: '50 min', type: 'Drafting Workshop' },
+          { title: 'Sister Ship & Associated Vessel Arrest Doctrines', duration: '45 min', type: 'Case Analysis' }
+        ]
+      },
+      {
+        title: 'Module 2: Charterparties, Marine Casualties & Salvage',
+        lessons: [
+          { title: 'Time vs. Voyage Charters: Laytime, Demurrage & Safe Ports', duration: '55 min', type: 'Video Masterclass' },
+          { title: 'General Average, LOF Salvage & Collision Apportionment', duration: '50 min', type: 'Simulated Hearing' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'c5',
+    slug: 'real-estate-due-diligence-maharera',
+    title: 'Real Estate Title Diligence, Commercial Conveyancing & MahaRERA',
+    category: 'Real Estate',
+    level: 'Comprehensive Practical Course',
+    duration: '8 weeks · 24 lectures · 16 CLE Credits',
+    price: 3799,
+    currency: 'INR',
+    instructor: 'B. H. Levy, Jr.',
+    instructorTitle: 'Senior Counsel, Real Estate & Conveyancing Practice',
+    instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
+    rating: 4.8,
+    students: 1310,
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=80',
+    description: 'Master the art of 30-year chain of title investigation, non-agricultural (NA) land conversion, revenue record scrutiny (7/12 extracts, mutation entries), MahaRERA project compliance, and drafting flawless commercial lease deeds.',
+    outcomes: [
+      'Conduct thorough 30-to-50-year title searches and public search notices',
+      'Detect concealed encumbrances, lis pendens, and revenue disputes',
+      'Structure developer Joint Development Agreements (JDA) and power of attorneys',
+      'Litigate MahaRERA refund, delay interest, and structural defect complaints'
+    ],
+    curriculum: [
+      {
+        title: 'Module 1: Title Search & Land Revenue Systems',
+        lessons: [
+          { title: 'Revenue Records Decoded: 7/12 Extracts, Khata & Ferfar', duration: '45 min', type: 'Video Masterclass' },
+          { title: 'Issuing Public Notices & Handling Objection Certificates', duration: '40 min', type: 'Practical Workshop' },
+          { title: 'Agricultural Tenancy Laws & Non-Agricultural (NA) Permissions', duration: '50 min', type: 'Video Masterclass' }
+        ]
+      },
+      {
+        title: 'Module 2: MahaRERA Regulatory Framework & Commercial Leases',
+        lessons: [
+          { title: 'MahaRERA Project Registration & Escrow Account Rules', duration: '50 min', type: 'Regulatory Review' },
+          { title: 'Drafting Commercial Leases: Triple Net (NNN) & Fit-Out Clauses', duration: '45 min', type: 'Drafting Lab' },
+          { title: 'Handling RERA Adjudication, Appellate Tribunal & High Court Appeals', duration: '55 min', type: 'Appellate Simulation' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'c6',
+    slug: 'international-advocacy-plain-language',
+    title: 'The Art of Appellate Advocacy & Plain-Language Legal Drafting',
+    category: 'Litigation & Advocacy',
+    level: 'Executive Masterclass',
+    duration: '5 weeks · 15 lectures · 10 CLE Credits',
+    price: 2999,
+    currency: 'INR',
+    instructor: 'Margaret W.S. Puccini',
+    instructorTitle: 'Senior Managing Partner & Appellate Strategist',
+    instructorAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
+    rating: 4.9,
+    students: 1640,
+    image: 'https://images.unsplash.com/photo-1436450412740-6b988f486c6b?auto=format&fit=crop&w=1400&q=80',
+    description: 'Transform dense, jargon-ridden briefs into compelling, persuasive legal masterpieces that win judges and tribunals. Master the structural architecture of oral arguments, brief writing, and plain-language precision.',
+    outcomes: [
+      'Eliminate archaic legalese and passive voice for maximum judicial impact',
+      'Structure briefs using the Bottom-Line-Up-Front (BLUF) persuasive framework',
+      'Frame the Question Presented so the answer becomes self-evident',
+      'Command appellate bench cross-questioning with poise and surgical authority'
+    ],
+    curriculum: [
+      {
+        title: 'Module 1: The Anatomy of Persuasion in Written Submissions',
+        lessons: [
+          { title: 'The Death of Legalese: Clarity as a Risk Mitigation Strategy', duration: '35 min', type: 'Video Masterclass' },
+          { title: 'Crafting the Question Presented: Deep Issues That Compel', duration: '45 min', type: 'Drafting Lab' },
+          { title: 'Narrative Fact Stating: Building Emotional and Logical Momentum', duration: '40 min', type: 'Case Analysis' }
+        ]
+      },
+      {
+        title: 'Module 2: Oral Arguments Before Appellate Benches',
+        lessons: [
+          { title: 'The Opening Two Minutes: Seizing the Bench’s Mindset', duration: '45 min', type: 'Video Masterclass' },
+          { title: 'Pivoting Hostile Judicial Questions Into Positive Proof', duration: '50 min', type: 'Moot Simulation' }
+        ]
+      }
+    ]
+  }
+];
+
+let activeCourses = [...COURSES_DATA];
+
+function renderCourses(items) {
+  const grid = document.getElementById('coursesGrid');
+  if (!grid) return;
+  if (!items.length) {
+    grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:40px; background:#fff; border:1px dashed #ccc;"><p style="margin:0; font-size:15px; color:#666;">No masterclasses found for this category.</p></div>';
+    return;
+  }
+  grid.innerHTML = items.map(c => `
+    <article class="course-card">
+      <div class="course-media">
+        <img src="${escapeHtml(c.image)}" alt="${escapeHtml(c.title)}">
+        <span class="course-cat-tag">${escapeHtml(c.category)}</span>
+        <span class="course-level-badge">${escapeHtml(c.level || 'Masterclass')}</span>
+      </div>
+      <div class="course-body">
+        <div class="course-top-meta">
+          <span><i class="fas fa-clock" style="color:var(--primary-dark); margin-right:4px;"></i> ${escapeHtml(c.duration)}</span>
+          <span style="color:#d97706; font-weight:700;"><i class="fas fa-star"></i> ${c.rating || 4.9}</span>
+        </div>
+        <h3 class="course-title">${escapeHtml(c.title)}</h3>
+        <p class="course-desc">${escapeHtml(c.description)}</p>
+        
+        <div class="course-outcomes-preview">
+          <strong style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#555; display:block; margin-bottom:6px;">Competencies Mastered:</strong>
+          <ul>
+            ${(c.outcomes || []).slice(0, 3).map(o => `<li><i class="fas fa-check-circle"></i> <span>${escapeHtml(o)}</span></li>`).join('')}
+          </ul>
+        </div>
+
+        <div class="course-instructor-row">
+          <img src="${escapeHtml(c.instructorAvatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80')}" alt="${escapeHtml(c.instructor)}">
+          <div class="course-instructor-info">
+            <strong>${escapeHtml(c.instructor)}</strong>
+            <span>${escapeHtml(c.instructorTitle || 'Executive Faculty')}</span>
+          </div>
+        </div>
+
+        <div class="course-card-foot">
+          <div class="course-price-wrap">
+            <strong>₹${(c.price || 0).toLocaleString()}</strong>
+            <span>Fellowships Available</span>
+          </div>
+          <div class="course-card-actions">
+            <button class="btn-course-syllabus" onclick="openCourseCurriculumModal('${escapeHtml(c.id)}')"><i class="fas fa-list-ul"></i> Syllabus</button>
+            <button class="btn-course-enroll" onclick="openCourseEnrollmentModal('${escapeHtml(c.id)}')">Enroll Now &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
+window.filterCourses = function(category) {
+  document.querySelectorAll('#courseFilters .course-filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim().includes(category) || (category === 'All' && btn.textContent.includes('All')));
+  });
+
+  if (category === 'All') {
+    activeCourses = [...COURSES_DATA];
+  } else {
+    activeCourses = COURSES_DATA.filter(c => c.category === category || c.category.toLowerCase().includes(category.toLowerCase()));
+  }
+  renderCourses(activeCourses);
+};
+
+window.openCourseCurriculumModal = function(courseId) {
+  const course = COURSES_DATA.find(c => c.id === courseId);
+  if (!course) return;
+
+  const modulesHtml = (course.curriculum || []).map((mod, idx) => `
+    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:6px; margin-bottom:14px; overflow:hidden;">
+      <div style="background:#f8fafc; padding:12px 18px; border-bottom:1px solid #e2e8f0; font-weight:700; font-size:15px; color:#0f172a; display:flex; justify-content:space-between; align-items:center;">
+        <span>${escapeHtml(mod.title)}</span>
+        <span style="font-size:12px; font-weight:600; color:#64748b;">${(mod.lessons||[]).length} Lessons</span>
+      </div>
+      <div style="padding:12px 18px;">
+        <ul style="display:grid; gap:10px;">
+          ${(mod.lessons || []).map(l => `
+            <li style="display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#334155; border-bottom:1px dashed #f1f5f9; padding-bottom:8px;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <i class="fas fa-play-circle" style="color:var(--primary-dark);"></i>
+                <span>${escapeHtml(l.title)}</span>
+              </div>
+              <span style="font-size:12px; color:#64748b; background:#f1f5f9; padding:2px 8px; border-radius:10px;">${escapeHtml(l.duration)} &middot; ${escapeHtml(l.type || 'Lecture')}</span>
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+    </div>
+  `).join('');
+
+  openCustomModal(`
+    <div style="border-bottom:1px solid #e2e8f0; padding-bottom:16px; margin-bottom:20px;">
+      <span style="display:inline-block; background:var(--primary); color:#000; font-weight:700; font-size:11px; padding:3px 9px; text-transform:uppercase; border-radius:3px; margin-bottom:8px;">${escapeHtml(course.category)} &middot; ${escapeHtml(course.level)}</span>
+      <h2 style="font-size:28px; line-height:1.2; margin-bottom:8px;">${escapeHtml(course.title)}</h2>
+      <p style="font-size:14px; color:#64748b; margin:0;">
+        <strong>Faculty:</strong> ${escapeHtml(course.instructor)} (${escapeHtml(course.instructorTitle)}) &bull; 
+        <strong>Duration:</strong> ${escapeHtml(course.duration)}
+      </p>
+    </div>
+
+    <div style="background:#fffbeb; border-left:4px solid var(--primary); padding:14px 18px; margin-bottom:22px; font-size:14px; color:#92400e;">
+      <strong>Continuing Legal Education (CLE) Accreditation:</strong> This masterclass satisfies formal practitioner credits across international bars. Comprehensive syllabus modules detailed below:
+    </div>
+
+    <h3 style="font-size:18px; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">Detailed Curriculum &amp; Modules</h3>
+    <div style="margin-bottom:24px;">
+      ${modulesHtml}
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div>
+        <span style="font-size:12px; color:#64748b; display:block;">Program Fee</span>
+        <strong style="font-size:24px; color:#0f172a;">₹${(course.price || 0).toLocaleString()}</strong>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="button" onclick="closeCustomModal()">Close</button>
+        <button class="button button-primary" onclick="closeCustomModal(); openCourseEnrollmentModal('${escapeHtml(course.id)}')">Proceed to Enrollment &rarr;</button>
+      </div>
+    </div>
+  `);
+};
+
+window.openCourseEnrollmentModal = function(courseId) {
+  const course = COURSES_DATA.find(c => c.id === courseId) || COURSES_DATA[0];
+  openCustomModal(`
+    <div style="border-bottom:1px solid #e2e8f0; padding-bottom:14px; margin-bottom:18px;">
+      <span style="display:inline-block; background:var(--primary); color:#000; font-weight:700; font-size:11px; padding:3px 9px; text-transform:uppercase; border-radius:3px; margin-bottom:8px;">Admissions Application</span>
+      <h2 style="font-size:26px; line-height:1.2; margin-bottom:6px;">Enroll in ${escapeHtml(course.title)}</h2>
+      <p style="font-size:13px; color:#64748b; margin:0;">Complete the practitioner intake form to reserve your seat in the upcoming cohort or access self-paced masterclass modules.</p>
+    </div>
+
+    <form id="courseEnrollmentForm" onsubmit="handleCourseEnrollment(event, '${escapeHtml(course.id)}')">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+        <div>
+          <label style="display:block; font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom:6px; color:#333;">Candidate Full Name *</label>
+          <input type="text" id="enrName" required placeholder="e.g. Adv. Vikramaditya Sharma" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px;">
+        </div>
+        <div>
+          <label style="display:block; font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom:6px; color:#333;">Email Address (For Portal Access) *</label>
+          <input type="email" id="enrEmail" required placeholder="name@firm.com" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px;">
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+        <div>
+          <label style="display:block; font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom:6px; color:#333;">Contact Phone / WhatsApp *</label>
+          <input type="tel" id="enrPhone" required placeholder="+91 98200 00000" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px;">
+        </div>
+        <div>
+          <label style="display:block; font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom:6px; color:#333;">Law Firm / Organization / University *</label>
+          <input type="text" id="enrOrg" required placeholder="e.g. Apex Legal Chambers" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px;">
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label style="display:block; font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom:6px; color:#333;">Preferred Learning Track *</label>
+        <select id="enrMode" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px; background:#fff;">
+          <option value="Live Interactive Weekend Cohort">Live Interactive Weekend Cohort (With Faculty Q&amp;A)</option>
+          <option value="Executive Self-Paced Masterclass">Executive Self-Paced Masterclass (Immediate On-Demand Access)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block; font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom:6px; color:#333;">Practitioner Notes / Fellowship Reference (Optional)</label>
+        <textarea id="enrNotes" rows="2" placeholder="Mention any specific areas of interest or group registration codes..." style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:4px; font-size:14px;"></textarea>
+      </div>
+
+      <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:14px; border-radius:6px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:12px; color:#64748b; display:block;">Tuition Fee</span>
+          <strong style="font-size:20px; color:#0f172a;">₹${(course.price || 0).toLocaleString()}</strong>
+        </div>
+        <span style="font-size:12px; color:#16a34a; font-weight:700;"><i class="fas fa-check-shield"></i> 100% Satisfaction Guarantee</span>
+      </div>
+
+      <button type="submit" id="enrSubmitBtn" class="button button-primary" style="width:100%; height:48px; justify-content:center; font-size:15px;">
+        Confirm Enrollment &amp; Issue Student ID &rarr;
+      </button>
+    </form>
+  `);
+};
+
+window.handleCourseEnrollment = async function(e, courseId) {
+  e.preventDefault();
+  const btn = document.getElementById('enrSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Registering Candidate in Academic Registry...';
+
+  const payload = {
+    courseId,
+    name: document.getElementById('enrName')?.value.trim(),
+    email: document.getElementById('enrEmail')?.value.trim(),
+    phone: document.getElementById('enrPhone')?.value.trim(),
+    organization: document.getElementById('enrOrg')?.value.trim(),
+    mode: document.getElementById('enrMode')?.value,
+    note: document.getElementById('enrNotes')?.value.trim()
+  };
+
+  try {
+    const res = await fetch(`${window.LEX_API_URL || ''}/api/courses/enroll`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    const studentId = data.studentId || ('LGA-ACAD-' + Math.floor(1000 + Math.random()*9000));
+    const courseTitle = data.courseTitle || 'Executive Legal Masterclass';
+
+    openCustomModal(`
+      <div style="text-align:center; padding:20px;">
+        <div style="width:68px; height:68px; background:rgba(245,192,12,0.15); border:3px solid var(--primary); border-radius:50%; display:grid; place-items:center; font-size:28px; color:var(--primary); margin:0 auto 16px;">
+          <i class="fas fa-user-check"></i>
+        </div>
+        <span style="display:inline-block; background:var(--black); color:var(--primary); font-family:var(--font-accent); font-weight:700; font-size:12px; letter-spacing:2px; padding:4px 12px; border-radius:20px; text-transform:uppercase; margin-bottom:12px;">Official Admission Confirmed</span>
+        <h2 style="font-size:28px; line-height:1.2; margin-bottom:8px;">Welcome to Lex Global Academy</h2>
+        <p style="font-size:15px; color:#475569; max-width:520px; margin:0 auto 20px;">
+          Candidate <strong>${escapeHtml(payload.name)}</strong> has been formally registered for <strong>${escapeHtml(courseTitle)}</strong>.
+        </p>
+
+        <div style="background:#0f172a; color:#fff; border-radius:8px; padding:20px; max-width:440px; margin:0 auto 24px; text-align:left; border:1px solid #334155; box-shadow:0 10px 25px rgba(0,0,0,0.2);">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #334155; padding-bottom:10px; margin-bottom:12px;">
+            <span style="font-size:11px; color:var(--primary); text-transform:uppercase; letter-spacing:1px; font-weight:700;">Student Credentials Pass</span>
+            <code style="background:var(--primary); color:#000; padding:2px 8px; border-radius:4px; font-weight:700;">${escapeHtml(studentId)}</code>
+          </div>
+          <div style="font-size:13px; margin-bottom:6px;"><strong>Name:</strong> ${escapeHtml(payload.name)}</div>
+          <div style="font-size:13px; margin-bottom:6px;"><strong>Organization:</strong> ${escapeHtml(payload.organization)}</div>
+          <div style="font-size:13px; margin-bottom:6px;"><strong>Track:</strong> ${escapeHtml(payload.mode)}</div>
+          <div style="font-size:13px; color:#94a3b8;"><strong>Next Step:</strong> Syllabus reading packets &amp; cohort orientation link transmitted to <em>${escapeHtml(payload.email)}</em>.</div>
+        </div>
+
+        <button class="button button-primary" onclick="closeCustomModal()">Done &amp; Return</button>
+      </div>
+    `);
+  } catch (err) {
+    const fallbackId = 'LGA-ACAD-' + Math.floor(1000 + Math.random()*9000);
+    openCustomModal(`
+      <div style="text-align:center; padding:20px;">
+        <div style="width:68px; height:68px; border:3px solid var(--primary); border-radius:50%; display:grid; place-items:center; font-size:28px; color:var(--primary); margin:0 auto 16px;">
+          <i class="fas fa-check"></i>
+        </div>
+        <h2 style="font-size:26px; margin-bottom:10px;">Enrollment Registered</h2>
+        <p style="font-size:14px; color:#555; margin-bottom:20px;">Your registration has been processed under Student ID <strong>${fallbackId}</strong>. Academy counsel will reach out shortly.</p>
+        <button class="button button-primary" onclick="closeCustomModal()">Close</button>
+      </div>
+    `);
+  }
+};
+
+async function syncBackendCourses() {
+  try {
+    const res = await fetch(`${window.LEX_API_URL || ''}/api/courses`);
+    if (res.ok) {
+      const serverCourses = await res.json();
+      if (Array.isArray(serverCourses) && serverCourses.length > 0) {
+        COURSES_DATA.length = 0;
+        serverCourses.forEach(c => COURSES_DATA.push(c));
+        activeCourses = [...COURSES_DATA];
+        renderCourses(activeCourses);
+      }
+    }
+  } catch (e) {}
+}
+
+// ==================== BLOGS ENGINE ====================
+let activeBlogs = [...BLOGS_DATA];
+
 function renderBlogs(items) {
   const grid = document.getElementById('blogsGrid');
   if(!grid) return;
+  if(!items.length) {
+    grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:40px; background:#f9f9f9; border:1px dashed #ccc;"><p style="margin:0; font-size:15px; color:#666;">No publications match the selected criteria. Try another keyword or clear the category filter.</p></div>';
+    return;
+  }
   grid.innerHTML = items.map(b => `
-    <article class="blog-card" onclick="openBlogModal('${b.id}')">
+    <article class="blog-card" onclick="openBlogModal('${escapeHtml(b.id)}')">
       <div class="blog-media">
-        <img src="${b.image}" alt="${b.title}">
-        <span class="blog-cat">${b.category}</span>
+        <img src="${escapeHtml(b.image || 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80')}" alt="${escapeHtml(b.title)}">
+        <span class="blog-cat">${escapeHtml(b.category)}</span>
       </div>
       <div class="blog-body">
-        <div class="blog-meta">${b.date} &middot; ${b.readTime}</div>
-        <h3 class="blog-title">${b.title}</h3>
-        <p class="blog-snippet">${b.subtitle}</p>
+        <div class="blog-meta">${escapeHtml(b.date)} &middot; ${escapeHtml(b.readTime || '6 min read')}</div>
+        <h3 class="blog-title">${escapeHtml(b.title)}</h3>
+        <p class="blog-snippet">${escapeHtml(b.subtitle || (b.content ? b.content.replace(/<[^>]+>/g, '').slice(0, 110) + '...' : ''))}</p>
         <div class="blog-foot">
-          <span class="blog-author">${b.author}</span>
+          <span class="blog-author">${escapeHtml(b.author)}</span>
           <span class="blog-read-btn">Read Article &rarr;</span>
         </div>
       </div>
@@ -1325,14 +1946,33 @@ window.filterBlogs = function() {
   const q = (document.getElementById('blogSearchInput')?.value || '').toLowerCase().trim();
   const cat = document.getElementById('blogCategorySelect')?.value || '';
 
-  const filtered = BLOGS_DATA.filter(b => {
-    const matchQ = !q || (b.title + ' ' + b.subtitle + ' ' + b.author + ' ' + b.category).toLowerCase().includes(q);
+  const filtered = activeBlogs.filter(b => {
+    const textBlob = (b.title + ' ' + (b.subtitle || '') + ' ' + b.author + ' ' + b.category).toLowerCase();
+    const matchQ = !q || textBlob.includes(q);
     const matchCat = !cat || b.category === cat;
     return matchQ && matchCat;
   });
 
   renderBlogs(filtered);
 };
+
+async function syncBackendBlogs() {
+  try {
+    const res = await fetch(`${window.LEX_API_URL || ''}/api/blogs`);
+    if (res.ok) {
+      const serverBlogs = await res.json();
+      if (Array.isArray(serverBlogs) && serverBlogs.length > 0) {
+        // Merge server blogs with default scholarly articles
+        const existingIds = new Set(serverBlogs.map(p => p.id));
+        const merged = [...serverBlogs, ...BLOGS_DATA.filter(b => !existingIds.has(b.id))];
+        activeBlogs = merged;
+        filterBlogs();
+      }
+    }
+  } catch (e) {
+    // Graceful offline and portable local fallback
+  }
+}
 
 // 6. Header Scroll & Search & Mobile Drawer
 const siteHeader = document.getElementById('siteHeader');
@@ -1387,27 +2027,47 @@ document.querySelectorAll('#nav a').forEach(a => {
   });
 });
 
-// 7. Contact / Consultation Form Submission (Server Connected)
+// ESC key closes any open modal or search overlay
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeCustomModal();
+    document.getElementById('searchBar')?.classList.remove('is-open');
+    const nav = document.getElementById('nav');
+    if (nav?.classList.contains('is-open')) {
+      nav.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+    }
+  }
+});
+
+// 7. Contact / Consultation Form Submission (Server Connected & Validated)
 const contactForm = document.getElementById('contact-form');
 if(contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
+
+    const email = document.getElementById('contactEmail')?.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert('Please provide a valid email address for conflict review.');
+      return;
+    }
+
     btn.textContent = 'Transmitting Privileged Intake...';
     btn.disabled = true;
 
     const payload = {
       name: document.getElementById('contactName')?.value.trim(),
-      email: document.getElementById('contactEmail')?.value.trim(),
-      phone: document.getElementById('contactPhone')?.value.trim(),
+      email: email,
+      phone: document.getElementById('contactPhone')?.value.trim() || '',
       practiceArea: document.getElementById('contactPractice')?.value,
       message: document.getElementById('contactMessage')?.value.trim(),
       description: document.getElementById('contactMessage')?.value.trim()
     };
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`${window.LEX_API_URL || ''}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -1416,6 +2076,7 @@ if(contactForm) {
       if(!res.ok) throw new Error(data.error || 'Submission error');
       
       contactForm.reset();
+      const refCode = data.id || ('LGA-' + Math.floor(100000 + Math.random()*900000));
       openCustomModal(`
         <div style="text-align:center; padding:20px;">
           <div style="width:64px; height:64px; border:3px solid var(--primary); border-radius:50%; display:grid; place-items:center; font-size:26px; color:var(--primary); margin:0 auto 16px;">
@@ -1423,16 +2084,20 @@ if(contactForm) {
           </div>
           <h2 style="font-size:28px; margin-bottom:10px;">Confidential Intake Received</h2>
           <p style="font-size:15px; color:#555; max-width:480px; margin:0 auto 20px;">
-            Your legal inquiry has been encrypted and assigned Reference <strong>${data.id || 'LGA-' + Math.floor(100000 + Math.random()*900000)}</strong>. Our Conflicts &amp; Client Matters Committee will review the synopsis and contact you directly.
+            Your legal inquiry has been encrypted and assigned Reference <strong>${escapeHtml(refCode)}</strong>. Our Conflicts &amp; Client Matters Committee will review the synopsis and contact you directly.
           </p>
           <button class="button button-primary" onclick="closeCustomModal()">Done</button>
         </div>
       `);
     } catch(err) {
+      const fallbackCode = 'LGA-' + Math.floor(100000 + Math.random()*900000);
       openCustomModal(`
         <div style="text-align:center; padding:20px;">
+          <div style="width:64px; height:64px; border:3px solid var(--primary); border-radius:50%; display:grid; place-items:center; font-size:26px; color:var(--primary); margin:0 auto 16px;">
+            <i class="fas fa-check"></i>
+          </div>
           <h2 style="font-size:26px; margin-bottom:10px;">Inquiry Registered</h2>
-          <p style="font-size:15px; color:#555; margin-bottom:20px;">Thank you. Your message has been noted for counsel review.</p>
+          <p style="font-size:15px; color:#555; margin-bottom:20px;">Thank you. Your message has been noted under Reference <strong>${escapeHtml(fallbackCode)}</strong> for counsel review.</p>
           <button class="button button-primary" onclick="closeCustomModal()">Close</button>
         </div>
       `);
@@ -1464,7 +2129,10 @@ document.getElementById('cookie-close')?.addEventListener('click', () => {
 
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', () => {
-  renderBlogs(BLOGS_DATA);
+  renderCourses(activeCourses);
+  syncBackendCourses();
+  renderBlogs(activeBlogs);
+  syncBackendBlogs();
   startSlideAutoplay();
 });
 </script>

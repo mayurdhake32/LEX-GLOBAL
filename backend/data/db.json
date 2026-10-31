@@ -1,0 +1,570 @@
+{
+  "adminPassword": "lexglobal2026",
+  "posts": [
+    {
+      "id": "p1",
+      "slug": "new-york-convention-primer",
+      "title": "The 1958 New York Convention: A Strategic Guide to Global Award Enforcement",
+      "subtitle": "Why the New York Convention remains the undisputed bedrock of cross-border dispute resolution — and how sophisticated counsel pre-empt Article V challenges.",
+      "category": "Arbitration",
+      "tags": [
+        "Arbitration",
+        "New York Convention",
+        "Enforcement",
+        "Cross-Border"
+      ],
+      "author": "Dr. Amara Okonkwo",
+      "authorRole": "Managing Partner & Arbitrator",
+      "authorAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+      "date": "2026-10-18",
+      "updated": "2026-10-22",
+      "readTime": "8 min read",
+      "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=80",
+      "featured": true,
+      "published": true,
+      "views": 3420,
+      "likes": 184,
+      "relatedCourseId": "c1",
+      "content": "<p class=\"lead\">An arbitral award is only as valuable as the assets it can successfully attach. International arbitration that ignores post-award execution is an academic exercise.</p><h2>The Enduring Genius of the 1958 Architecture</h2><p>Over 170 contracting states adhere to the Convention on the Recognition and Enforcement of Foreign Arbitral Awards (the New York Convention). Its foundational premise is deceptively simple: foreign arbitral awards must be recognized as binding and enforced generally in accordance with the rules of procedure of the territory where the award is relied upon, without re-litigating the underlying merits of the dispute.</p><h2>The Exhaustive Grounds of Article V</h2><p>Article V represents an exhaustive list of defenses. A national enforcing court cannot craft novel common-law grounds to deny enforcement; it is strictly constrained to the defenses established under Article V(1) (raised by the resisting party) and Article V(2) (invoked ex officio by the court).</p><h3>1. Incapacity and Agreement Invalidity (Article V(1)(a))</h3><p>Resisting parties often claim that the signatory lacked requisite corporate authority or that the underlying arbitration clause violates the law of the seat. Proactive transactional counsel eliminate this vulnerability by obtaining formal board resolutions and specifying a clear governing law for the arbitration agreement itself.</p><blockquote>The public policy exception under Article V(2)(b) is construed with extreme narrowness across major pro-enforcement seats.</blockquote><h2>Practical Checklist for Counsel</h2><ul><li>Verify contracting status of all potential asset jurisdictions.</li><li>Preserve original certified apostilled copies of agreements and awards.</li><li>Deploy simultaneous asset tracing and interim freezing orders early.</li></ul>",
+      "comments": [
+        {
+          "id": "cm1",
+          "author": "Julian Sterling, KC",
+          "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+          "date": "2026-10-20",
+          "content": "Superb breakdown, Dr. Okonkwo. In English Commercial Court jurisprudence, the threshold for Article V(1)(b) notice challenges has remained high. Documenting electronic delivery receipts has proven decisive.",
+          "likes": 14,
+          "replies": [
+            {
+              "id": "cm1-r1",
+              "author": "Dr. Amara Okonkwo",
+              "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+              "date": "2026-10-21",
+              "content": "Thank you Julian. Indeed, the institutional rules on electronic service have significantly mitigated those evidentiary challenges."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "slug": "gdpr-cross-border-transfers",
+      "title": "Cross-Border Data Transfers Under GDPR: The Compliance Blueprint",
+      "subtitle": "Navigating Standard Contractual Clauses, Transfer Impact Assessments (TIAs), and supplementary encryption protocols in high-risk foreign jurisdictions.",
+      "category": "Data & Privacy",
+      "tags": [
+        "GDPR",
+        "Data Privacy",
+        "Compliance",
+        "EU Law"
+      ],
+      "author": "Dr. Sofia Lindqvist",
+      "authorRole": "Head of Data & Privacy",
+      "authorAvatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
+      "date": "2026-10-14",
+      "updated": "2026-10-17",
+      "readTime": "9 min read",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
+      "featured": false,
+      "published": true,
+      "views": 2890,
+      "likes": 142,
+      "relatedCourseId": "c3",
+      "content": "<h2>The Global Reach of Chapter V GDPR</h2><p>Under Chapter V of the General Data Protection Regulation (Regulation (EU) 2016/679), personal data cannot leave the European Economic Area unless the importing country guarantees an essentially equivalent level of protection, or the data exporter implements appropriate safeguards.</p><h2>The Modern Transfer Impact Assessment (TIA)</h2><p>Merely signing the European Commission Standard Contractual Clauses (SCCs) is no longer a safe harbor. Exporters must carry out a documented Transfer Impact Assessment evaluating destination laws concerning government surveillance and national security intercept powers.</p><blockquote>If foreign statutory laws mandate unencrypted backdoors without independent judicial oversight, SCCs alone cannot legitimize the transfer.</blockquote>",
+      "comments": []
+    },
+    {
+      "id": "p3",
+      "slug": "drafting-bulletproof-indemnities",
+      "title": "Drafting Bulletproof Indemnities in Cross-Border Commercial Agreements",
+      "subtitle": "Bridging the common law and civil law divide on consequential damages, gross negligence carve-outs, and liability caps.",
+      "category": "Cross-Border Contracts",
+      "tags": [
+        "Contracts",
+        "Drafting",
+        "Commercial Law"
+      ],
+      "author": "Adv. Priya Menon",
+      "authorRole": "Partner, Transactional Practice",
+      "authorAvatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+      "date": "2026-10-06",
+      "updated": "2026-10-10",
+      "readTime": "7 min read",
+      "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80",
+      "featured": false,
+      "published": true,
+      "views": 2150,
+      "likes": 98,
+      "relatedCourseId": "c2",
+      "content": "<h2>Why Indemnities Generate Intense Cross-Border Friction</h2><p>In common-law drafting traditions (England, US, Singapore, India), an indemnity creates an independent, debt-based primary obligation to hold another harmless. In civil-law jurisdictions, an indemnity is frequently assimilated into the statutory framework of breach of contractual duty and damages.</p><h2>Core Drafting Rules</h2><p>Specify whether causation and mitigation rules apply, avoid uncapped exposure for non-IP claims, and define who controls settlement negotiations when a third party sues.</p>",
+      "comments": []
+    },
+    {
+      "id": "p4",
+      "slug": "cross-border-ecommerce-consumer-disputes",
+      "title": "Consumer Rights in Cross-Border E-Commerce: Jurisdiction & Chargebacks",
+      "subtitle": "How digital buyers and global merchants navigate payment disputes, unfair contract terms, and forum non conveniens.",
+      "category": "Consumer Protection",
+      "tags": [
+        "Consumer Rights",
+        "E-Commerce",
+        "Fintech"
+      ],
+      "author": "Adv. Rohan Desai",
+      "authorRole": "Consumer Lead",
+      "authorAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      "date": "2026-09-28",
+      "updated": "2026-10-01",
+      "readTime": "6 min read",
+      "image": "https://images.unsplash.com/photo-1453945619913-79ec89a82c51?auto=format&fit=crop&w=1400&q=80",
+      "featured": false,
+      "published": true,
+      "views": 1980,
+      "likes": 85,
+      "relatedCourseId": "c4",
+      "content": "<h2>The Global Shopping Cart: Whose Law Governs?</h2><p>When an individual purchases from a foreign entity, standard terms often specify foreign courts. However, modern consumer protection legislation renders foreign jurisdiction clauses unenforceable against domestic consumers if the merchant actively directed activities to their residence.</p>",
+      "comments": []
+    },
+    {
+      "id": "p5",
+      "slug": "plain-language-international-legal-writing",
+      "title": "The Architecture of Clarity: Plain-Language Craft in International Advocacy",
+      "subtitle": "Why eliminating archaic legalistic formulas is a vital risk-mitigation strategy for modern international counsel.",
+      "category": "Legal Writing",
+      "tags": [
+        "Legal Writing",
+        "Advocacy",
+        "Clarity"
+      ],
+      "author": "Adv. Sameer Qureshi",
+      "authorRole": "Director of Advocacy",
+      "authorAvatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+      "date": "2026-08-30",
+      "updated": "2026-09-02",
+      "readTime": "6 min read",
+      "image": "https://images.unsplash.com/photo-1436450412740-6b988f486c6b?auto=format&fit=crop&w=1400&q=80",
+      "featured": false,
+      "published": true,
+      "views": 2600,
+      "likes": 195,
+      "relatedCourseId": "c6",
+      "content": "<h2>Legalese is Not Precision; It is Obfuscation</h2><p>Phrases like 'heretofore,' 'witnesseth,' and 'provided always that' do not render a document more legally sound. Instead, they strain reader comprehension, introduce conflicting provisos, and invite judicial skepticism.</p><h2>Core Principles</h2><p>Lead with the bottom line up front (BLUF), prefer active agents, keep one operative idea per sentence, and eliminate nominalisations.</p>",
+      "comments": []
+    }
+  ],
+  "courses": [
+    {
+      "id": "c1",
+      "slug": "international-commercial-arbitration",
+      "title": "International Commercial Arbitration: Strategy & Award Enforcement",
+      "category": "Arbitration",
+      "level": "Advanced Masterclass",
+      "duration": "8 weeks · 24 lectures · 16 CLE Credits",
+      "price": 4999,
+      "currency": "INR",
+      "instructor": "Dr. Amara Okonkwo",
+      "instructorTitle": "Partner & Arbitrator (LCIA, SIAC, ICC Panels)",
+      "instructorAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      "rating": 4.9,
+      "students": 1420,
+      "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=80",
+      "description": "An exhaustive, practitioner-led masterclass on drafting dispute resolution clauses, curial law selection, emergency arbitral injunctions, evidentiary hearings under IBA rules, and cross-border award attachment under the 1958 New York Convention.",
+      "accreditation": "Accredited by Global Bar CLE Council & CIArb Equivalent",
+      "outcomes": [
+        "Draft bulletproof multi-tier dispute resolution and escalation clauses",
+        "Select arbitration seats, institutional rules, and tribunal members strategically",
+        "Deploy emergency arbitrator applications and cross-border asset freezing",
+        "Master Article V New York Convention defences and global sovereign asset attachment",
+        "Draft enforceable Redfern evidentiary schedules under IBA Rules of Evidence"
+      ],
+      "curriculum": [
+        {
+          "title": "Module 1: The Foundations & The Arbitration Agreement",
+          "lessons": [
+            { "id": "l1", "title": "The 1958 New York Convention Architecture in Global Practice", "duration": "45 min", "type": "video", "preview": true },
+            { "id": "l2", "title": "Pathological Arbitration Clauses & Drafting Remedies", "duration": "50 min", "type": "video", "preview": true },
+            { "id": "l3", "title": "Seat vs. Venue: Substantive Curial Law & Judicial Supervision", "duration": "40 min", "type": "case-study", "preview": false }
+          ]
+        },
+        {
+          "title": "Module 2: Tribunal Procedure, Evidence & Emergency Injunctions",
+          "lessons": [
+            { "id": "l4", "title": "Emergency Arbitrators & Urgent Interim Asset Freezing", "duration": "55 min", "type": "video", "preview": false },
+            { "id": "l5", "title": "IBA Rules on the Taking of Evidence & Redfern Document Production", "duration": "60 min", "type": "workshop", "preview": false },
+            { "id": "l6", "title": "Cross-Examination of Technical & Financial Damages Experts", "duration": "50 min", "type": "video", "preview": false }
+          ]
+        },
+        {
+          "title": "Module 3: Awards, Annulment & Global Asset Recovery",
+          "lessons": [
+            { "id": "l7", "title": "Drafting Final Enforceable Awards: Standard of Reasons", "duration": "45 min", "type": "video", "preview": false },
+            { "id": "l8", "title": "Defeating Article V Non-Enforcement Objections & Public Policy Bars", "duration": "55 min", "type": "case-study", "preview": false },
+            { "id": "l9", "title": "Attaching Sovereign Commercial Assets & Multi-Jurisdiction Execution", "duration": "60 min", "type": "masterclass", "preview": false }
+          ]
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "c2",
+      "slug": "cross-border-contract-drafting",
+      "title": "Cross-Border Contract Drafting, Joint Ventures & Risk Allocation",
+      "category": "Cross-Border Contracts",
+      "level": "Executive Practitioner",
+      "duration": "6 weeks · 18 lectures · 12 CLE Credits",
+      "price": 3499,
+      "currency": "INR",
+      "instructor": "Adv. Priya Menon",
+      "instructorTitle": "Partner, Transactional Practice & M&A",
+      "instructorAvatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      "rating": 4.8,
+      "students": 1180,
+      "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80",
+      "description": "Structure multi-jurisdictional contracts that bridge common law and civil law systems. Master indemnities, representations & warranties, currency hedging clauses, force majeure, and dispute escalation protocols.",
+      "accreditation": "Recognized by International Corporate Counsel Guild",
+      "outcomes": [
+        "Harmonize common law indemnities with civil law breach concepts",
+        "Structure cross-border joint ventures and deadlock resolution mechanisms",
+        "Draft enforceable limitation of liability and consequential damage caps",
+        "Incorporate Incoterms 2020 rules into transnational supply agreements",
+        "Negotiate representation & warranty insurance (RWI) in global M&A"
+      ],
+      "curriculum": [
+        {
+          "title": "Module 1: The Transnational Contract Architecture",
+          "lessons": [
+            { "id": "l201", "title": "Governing Law Clauses vs. Jurisdiction Carve-Outs", "duration": "40 min", "type": "video", "preview": true },
+            { "id": "l202", "title": "Representations, Warranties & Indemnity Covenants", "duration": "50 min", "type": "video", "preview": true },
+            { "id": "l203", "title": "Liability Caps, Super-Caps & Fraud Carve-Outs", "duration": "45 min", "type": "workshop", "preview": false }
+          ]
+        },
+        {
+          "title": "Module 2: Complex Joint Ventures & Transaction Execution",
+          "lessons": [
+            { "id": "l204", "title": "Deadlock Resolution: Russian Roulette, Texas Shootout & Put Options", "duration": "55 min", "type": "video", "preview": false },
+            { "id": "l205", "title": "Force Majeure, Hardship Clauses & Sanctions Frustration", "duration": "45 min", "type": "case-study", "preview": false },
+            { "id": "l206", "title": "Cross-Border Signing, Escrow & Closing Protocol Execution", "duration": "50 min", "type": "workshop", "preview": false }
+          ]
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "c3",
+      "slug": "global-data-privacy-compliance",
+      "title": "Global Data Privacy, GDPR & India DPDP Act 2023 Masterclass",
+      "category": "Data & Privacy",
+      "level": "Specialist Masterclass",
+      "duration": "7 weeks · 21 lectures · 14 CPD Credits",
+      "price": 3999,
+      "currency": "INR",
+      "instructor": "Dr. Sofia Lindqvist",
+      "instructorTitle": "Head of Data & Privacy, Former EU Regulatory Counsel",
+      "instructorAvatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+      "rating": 4.9,
+      "students": 980,
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
+      "description": "Comprehensive comparative mastery of the EU GDPR, UK-GDPR, India's Digital Personal Data Protection (DPDP) Act 2023, and global AI governance laws. Learn to conduct Transfer Impact Assessments (TIAs) and orchestrate 72-hour breach responses.",
+      "accreditation": "IAPP Continuous Legal Education Aligned",
+      "outcomes": [
+        "Conduct defensible Transfer Impact Assessments (TIAs) post-Schrems II",
+        "Implement Data Protection Impact Assessments (DPIAs) for AI applications",
+        "Draft compliant Data Processing Agreements (DPAs) with Standard Contractual Clauses",
+        "Command a 72-hour mandatory breach triage and supervisory notification unit",
+        "Ensure full compliance with the Digital Personal Data Protection Act 2023"
+      ],
+      "curriculum": [
+        {
+          "title": "Module 1: Principles, Grounds & Cross-Border Data Flows",
+          "lessons": [
+            { "id": "l301", "title": "Lawful Bases for Processing & Legitimate Interest Assessments", "duration": "45 min", "type": "video", "preview": true },
+            { "id": "l302", "title": "Standard Contractual Clauses (SCCs) & Supplementary Encryption", "duration": "50 min", "type": "video", "preview": true },
+            { "id": "l303", "title": "Transfer Impact Assessments (TIAs) in Surveillance Jurisdictions", "duration": "60 min", "type": "workshop", "preview": false }
+          ]
+        },
+        {
+          "title": "Module 2: Breach Response, AI Regulation & Regulatory Fines",
+          "lessons": [
+            { "id": "l304", "title": "72-Hour Breach Triage, Forensics & Regulatory Filings", "duration": "55 min", "type": "simulation", "preview": false },
+            { "id": "l305", "title": "The EU AI Act & Algorithmic Liability for High-Risk Systems", "duration": "50 min", "type": "video", "preview": false },
+            { "id": "l306", "title": "Defending Before Data Protection Authorities & Penalty Mitigation", "duration": "45 min", "type": "case-study", "preview": false }
+          ]
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "c4",
+      "slug": "admiralty-maritime-law-practice",
+      "title": "Admiralty Practice, Ship Arrests & Maritime Liens",
+      "category": "Maritime & Admiralty",
+      "level": "Specialized Practice",
+      "duration": "6 weeks · 18 lectures · 12 CLE Credits",
+      "price": 4499,
+      "currency": "INR",
+      "instructor": "Kathleen Horne",
+      "instructorTitle": "Partner, Maritime & Admiralty Practice",
+      "instructorAvatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+      "rating": 4.9,
+      "students": 670,
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1400&q=80",
+      "description": "Essential masterclass on admiralty jurisdiction, obtaining warrant of vessel arrest under international conventions, maritime liens, charterparty demurrage claims, collision salvage, and P&I Club letters of undertaking.",
+      "accreditation": "Maritime Law Association Accredited",
+      "outcomes": [
+        "Execute swift ex parte vessel arrest proceedings across major global ports",
+        "Rank maritime claims, statutory liens, and mortgage priority",
+        "Negotiate Club Letters of Undertaking (LOU) and security releases",
+        "Litigate speed and consumption warranty breaches and laytime/demurrage disputes"
+      ],
+      "curriculum": [
+        {
+          "title": "Module 1: Admiralty Jurisdiction & Vessel Arrests",
+          "lessons": [
+            { "id": "l401", "title": "The International Arrest Conventions 1952 & 1999", "duration": "45 min", "type": "video", "preview": true },
+            { "id": "l402", "title": "Drafting Ex Parte Caveats & Arrest Applications", "duration": "50 min", "type": "workshop", "preview": true },
+            { "id": "l403", "title": "Sister Ship & Associated Vessel Arrest Doctrines", "duration": "45 min", "type": "case-study", "preview": false }
+          ]
+        },
+        {
+          "title": "Module 2: Charterparties, Marine Casualties & Salvage",
+          "lessons": [
+            { "id": "l404", "title": "Time vs. Voyage Charters: Laytime, Demurrage & Safe Ports", "duration": "55 min", "type": "video", "preview": false },
+            { "id": "l405", "title": "General Average, LOF Salvage & Collision Apportionment", "duration": "50 min", "type": "case-study", "preview": false }
+          ]
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "c5",
+      "slug": "real-estate-due-diligence-maharera",
+      "title": "Real Estate Title Diligence, Commercial Conveyancing & MahaRERA",
+      "category": "Real Estate",
+      "level": "Comprehensive Practical Course",
+      "duration": "8 weeks · 24 lectures · 16 CLE Credits",
+      "price": 3799,
+      "currency": "INR",
+      "instructor": "B. H. Levy, Jr.",
+      "instructorTitle": "Senior Counsel, Real Estate & Conveyancing Practice",
+      "instructorAvatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      "rating": 4.8,
+      "students": 1310,
+      "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=80",
+      "description": "Master the art of 30-year chain of title investigation, non-agricultural (NA) land conversion, revenue record scrutiny (7/12 extracts, mutation entries), MahaRERA project compliance, and drafting flawless commercial lease deeds.",
+      "accreditation": "Real Estate Legal Practitioners Forum Certified",
+      "outcomes": [
+        "Conduct thorough 30-to-50-year title searches and public search notices",
+        "Detect concealed encumbrances, lis pendens, and revenue disputes",
+        "Structure developer Joint Development Agreements (JDA) and power of attorneys",
+        "Litigate MahaRERA refund, delay interest, and structural defect complaints"
+      ],
+      "curriculum": [
+        {
+          "title": "Module 1: Title Search & Land Revenue Systems",
+          "lessons": [
+            { "id": "l501", "title": "Revenue Records Decoded: 7/12 Extracts, Khata & Ferfar", "duration": "45 min", "type": "video", "preview": true },
+            { "id": "l502", "title": "Issuing Public Notices & Handling Objection Certificates", "duration": "40 min", "type": "workshop", "preview": true },
+            { "id": "l503", "title": "Agricultural Tenancy Laws & Non-Agricultural (NA) Permissions", "duration": "50 min", "type": "video", "preview": false }
+          ]
+        },
+        {
+          "title": "Module 2: MahaRERA Regulatory Framework & Commercial Leases",
+          "lessons": [
+            { "id": "l504", "title": "MahaRERA Project Registration & Escrow Account Rules", "duration": "50 min", "type": "video", "preview": false },
+            { "id": "l505", "title": "Drafting Commercial Leases: Triple Net (NNN) & Fit-Out Clauses", "duration": "45 min", "type": "workshop", "preview": false },
+            { "id": "l506", "title": "Handling RERA Adjudication, Appellate Tribunal & High Court Appeals", "duration": "55 min", "type": "case-study", "preview": false }
+          ]
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "c6",
+      "slug": "international-advocacy-plain-language",
+      "title": "The Art of Appellate Advocacy & Plain-Language Legal Drafting",
+      "category": "Litigation & Advocacy",
+      "level": "Executive Masterclass",
+      "duration": "5 weeks · 15 lectures · 10 CLE Credits",
+      "price": 2999,
+      "currency": "INR",
+      "instructor": "Margaret W.S. Puccini",
+      "instructorTitle": "Senior Managing Partner & Appellate Strategist",
+      "instructorAvatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      "rating": 4.9,
+      "students": 1640,
+      "image": "https://images.unsplash.com/photo-1436450412740-6b988f486c6b?auto=format&fit=crop&w=1400&q=80",
+      "description": "Transform dense, jargon-ridden briefs into compelling, persuasive legal masterpieces that win judges and tribunals. Master the structural architecture of oral arguments, brief writing, and plain-language precision.",
+      "accreditation": "Appellate Counsel Institute Certified",
+      "outcomes": [
+        "Eliminate archaic legalese and passive voice for maximum judicial impact",
+        "Structure briefs using the Bottom-Line-Up-Front (BLUF) persuasive framework",
+        "Frame the Question Presented so the answer becomes self-evident",
+        "Command appellate bench cross-questioning with poise and surgical authority"
+      ],
+      "curriculum": [
+        {
+          "title": "Module 1: The Anatomy of Persuasion in Written Submissions",
+          "lessons": [
+            { "id": "l601", "title": "The Death of Legalese: Clarity as a Risk Mitigation Strategy", "duration": "35 min", "type": "video", "preview": true },
+            { "id": "l602", "title": "Crafting the Question Presented: Deep Issues That Compel", "duration": "45 min", "type": "workshop", "preview": true },
+            { "id": "l603", "title": "Narrative Fact Stating: Building Emotional and Logical Momentum", "duration": "40 min", "type": "case-study", "preview": false }
+          ]
+        },
+        {
+          "title": "Module 2: Oral Arguments Before Appellate Benches",
+          "lessons": [
+            { "id": "l604", "title": "The Opening Two Minutes: Seizing the Bench's Mindset", "duration": "45 min", "type": "video", "preview": false },
+            { "id": "l605", "title": "Pivoting Hostile Judicial Questions Into Positive Proof", "duration": "50 min", "type": "simulation", "preview": false }
+          ]
+        }
+      ],
+      "published": true
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "enr-101",
+      "courseId": "c1",
+      "courseTitle": "International Commercial Arbitration: Strategy & Award Enforcement",
+      "name": "Vikramaditya Singhania",
+      "email": "v.singhania@apexlegal.in",
+      "phone": "+91 98201 54321",
+      "organization": "Apex Legal Chambers, Mumbai",
+      "mode": "Live Interactive Weekend Cohort",
+      "status": "Confirmed",
+      "enrolledAt": "2026-10-28T09:15:00.000Z",
+      "studentId": "LGA-ACAD-8842"
+    },
+    {
+      "id": "enr-102",
+      "courseId": "c3",
+      "courseTitle": "Global Data Privacy, GDPR & India DPDP Act 2023 Masterclass",
+      "name": "Ananya Sen",
+      "email": "ananya.sen@techpulse.io",
+      "phone": "+91 98300 12890",
+      "organization": "TechPulse Systems",
+      "mode": "Executive Self-Paced Masterclass",
+      "status": "Confirmed",
+      "enrolledAt": "2026-10-29T14:20:00.000Z",
+      "studentId": "LGA-ACAD-9104"
+    }
+  ],
+  "team": [
+    {
+      "id": "t1",
+      "name": "Dr. Amara Okonkwo",
+      "role": "Managing Partner & Arbitrator",
+      "specialty": "International Commercial & Treaty Arbitration",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+      "bio": "Dr. Okonkwo has eighteen years in international dispute resolution across Europe, Africa, and Southeast Asia. She has sat as arbitrator and counsel in over 45 proceedings under ICC, LCIA, SIAC, and ICSID rules.",
+      "admissions": [
+        "Bar of England & Wales",
+        "Singapore International Commercial Court Bar",
+        "Nigerian Bar"
+      ],
+      "languages": [
+        "English",
+        "French",
+        "Yoruba"
+      ],
+      "experience": "18 years"
+    },
+    {
+      "id": "t2",
+      "name": "Adv. Priya Menon",
+      "role": "Partner, Transactional Practice",
+      "specialty": "Cross-Border Contracts, Joint Ventures & M&A",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+      "bio": "Priya advises funds, cross-border fintech platforms, and enterprise software providers on cross-jurisdictional M&A, licensing, and governing-law structures.",
+      "admissions": [
+        "New York State Bar",
+        "Bar Council of India"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Malayalam"
+      ],
+      "experience": "14 years"
+    },
+    {
+      "id": "t3",
+      "name": "Dr. Sofia Lindqvist",
+      "role": "Head of Data & Privacy",
+      "specialty": "Global Data Protection & Cyber Governance",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
+      "bio": "Dr. Lindqvist counsels on European GDPR, UK GDPR, and APAC frameworks. Former advisor to the EDPB working group on Standard Contractual Clauses.",
+      "admissions": [
+        "Swedish Bar Association",
+        "Law Society of England & Wales"
+      ],
+      "languages": [
+        "English",
+        "Swedish",
+        "German"
+      ],
+      "experience": "12 years"
+    },
+    {
+      "id": "t4",
+      "name": "Adv. Rohan Desai",
+      "role": "Consumer Lead",
+      "specialty": "E-Commerce Liability & Consumer Redress",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      "bio": "Rohan has represented consumer collectives and digital platform operators before appellate commissions, focusing on deceptive patterns and payment disputes.",
+      "admissions": [
+        "Supreme Court of India"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Gujarati"
+      ],
+      "experience": "10 years"
+    }
+  ],
+  "inquiries": [
+    {
+      "id": "inq-1",
+      "name": "Adv. Genevieve Laurent",
+      "email": "g.laurent@meridian-ventures.fr",
+      "phone": "+33 1 42 68 55 00",
+      "subject": "SIAC Partial Award Enforcement Strategy",
+      "organization": "Meridian Capital Partners",
+      "practiceArea": "International Commercial Arbitration",
+      "jurisdiction": "France / Singapore",
+      "description": "Seeking legal guidance regarding enforcement of a SIAC partial award against a commercial subsidiary of a North African state enterprise.",
+      "urgency": "Urgent",
+      "createdAt": "2026-10-24T14:32:00.000Z",
+      "status": "Under Review"
+    },
+    {
+      "id": "inq-2",
+      "name": "Captain Henrik Lindholm",
+      "email": "h.lindholm@nordic-maritime.se",
+      "phone": "+46 8 505 1200",
+      "subject": "Vessel Arrest & Demurrage Security in Mumbai Port",
+      "organization": "Nordic Bulk Charterers AB",
+      "practiceArea": "Maritime & Admiralty",
+      "jurisdiction": "Sweden / India",
+      "description": "Charterer has defaulted on consecutive voyage demurrage invoices exceeding $420,000. Vessel currently berthed at JNPT Port Mumbai. Urgent arrest warrant required.",
+      "urgency": "Immediate Attention",
+      "createdAt": "2026-10-26T11:05:00.000Z",
+      "status": "New"
+    },
+    {
+      "id": "inq-3",
+      "name": "Rajeshwari Singhania",
+      "email": "r.singhania@mumbaidevelopers.in",
+      "phone": "+91 98200 44112",
+      "subject": "MahaRERA Project Conveyance & Society Deemed Conveyance",
+      "organization": "Singhania Horizon Realty LLP",
+      "practiceArea": "Real Estate",
+      "jurisdiction": "Maharashtra, India",
+      "description": "Require comprehensive title certification and deemed conveyance documentation for a 4.5-acre residential redevelopment in Bandra West.",
+      "urgency": "Routine",
+      "createdAt": "2026-10-29T16:45:00.000Z",
+      "status": "Cleared"
+    }
+  ]
+}

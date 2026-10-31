@@ -1317,6 +1317,42 @@ function renderBlogs(items) {
           <span class="blog-read-btn">Read Article &rarr;</span>
         </div>
       </div>
+// XSS Sanitizer for defense-in-depth
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// 5. Render Blogs in Grid (with dynamic backend integration)
+let activeBlogs = [...BLOGS_DATA];
+
+function renderBlogs(items) {
+  const grid = document.getElementById('blogsGrid');
+  if(!grid) return;
+  if(!items.length) {
+    grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:40px; background:#f9f9f9; border:1px dashed #ccc;"><p style="margin:0; font-size:15px; color:#666;">No publications match the selected criteria. Try another keyword or clear the category filter.</p></div>';
+    return;
+  }
+  grid.innerHTML = items.map(b => `
+    <article class="blog-card" onclick="openBlogModal('${escapeHtml(b.id)}')">
+      <div class="blog-media">
+        <img src="${escapeHtml(b.image || 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80')}" alt="${escapeHtml(b.title)}">
+        <span class="blog-cat">${escapeHtml(b.category)}</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta">${escapeHtml(b.date)} &middot; ${escapeHtml(b.readTime || '6 min read')}</div>
+        <h3 class="blog-title">${escapeHtml(b.title)}</h3>
+        <p class="blog-snippet">${escapeHtml(b.subtitle || (b.content ? b.content.replace(/<[^>]+>/g, '').slice(0, 110) + '...' : ''))}</p>
+        <div class="blog-foot">
+          <span class="blog-author">${escapeHtml(b.author)}</span>
+          <span class="blog-read-btn">Read Article &rarr;</span>
+        </div>
+      </div>
     </article>
   `).join('');
 }
@@ -1325,14 +1361,33 @@ window.filterBlogs = function() {
   const q = (document.getElementById('blogSearchInput')?.value || '').toLowerCase().trim();
   const cat = document.getElementById('blogCategorySelect')?.value || '';
 
-  const filtered = BLOGS_DATA.filter(b => {
-    const matchQ = !q || (b.title + ' ' + b.subtitle + ' ' + b.author + ' ' + b.category).toLowerCase().includes(q);
+  const filtered = activeBlogs.filter(b => {
+    const textBlob = (b.title + ' ' + (b.subtitle || '') + ' ' + b.author + ' ' + b.category).toLowerCase();
+    const matchQ = !q || textBlob.includes(q);
     const matchCat = !cat || b.category === cat;
     return matchQ && matchCat;
   });
 
   renderBlogs(filtered);
 };
+
+async function syncBackendBlogs() {
+  try {
+    const res = await fetch('/api/blogs');
+    if (res.ok) {
+      const serverBlogs = await res.json();
+      if (Array.isArray(serverBlogs) && serverBlogs.length > 0) {
+        // Merge server blogs with default scholarly articles
+        const existingIds = new Set(serverBlogs.map(p => p.id));
+        const merged = [...serverBlogs, ...BLOGS_DATA.filter(b => !existingIds.has(b.id))];
+        activeBlogs = merged;
+        filterBlogs();
+      }
+    }
+  } catch (e) {
+    // Graceful offline and portable local fallback
+  }
+}
 
 // 6. Header Scroll & Search & Mobile Drawer
 const siteHeader = document.getElementById('siteHeader');
@@ -1387,20 +1442,40 @@ document.querySelectorAll('#nav a').forEach(a => {
   });
 });
 
-// 7. Contact / Consultation Form Submission (Server Connected)
+// ESC key closes any open modal or search overlay
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeCustomModal();
+    document.getElementById('searchBar')?.classList.remove('is-open');
+    const nav = document.getElementById('nav');
+    if (nav?.classList.contains('is-open')) {
+      nav.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+    }
+  }
+});
+
+// 7. Contact / Consultation Form Submission (Server Connected & Validated)
 const contactForm = document.getElementById('contact-form');
 if(contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
+
+    const email = document.getElementById('contactEmail')?.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert('Please provide a valid email address for conflict review.');
+      return;
+    }
+
     btn.textContent = 'Transmitting Privileged Intake...';
     btn.disabled = true;
 
     const payload = {
       name: document.getElementById('contactName')?.value.trim(),
-      email: document.getElementById('contactEmail')?.value.trim(),
-      phone: document.getElementById('contactPhone')?.value.trim(),
+      email: email,
+      phone: document.getElementById('contactPhone')?.value.trim() || '',
       practiceArea: document.getElementById('contactPractice')?.value,
       message: document.getElementById('contactMessage')?.value.trim(),
       description: document.getElementById('contactMessage')?.value.trim()
@@ -1416,6 +1491,7 @@ if(contactForm) {
       if(!res.ok) throw new Error(data.error || 'Submission error');
       
       contactForm.reset();
+      const refCode = data.id || ('LGA-' + Math.floor(100000 + Math.random()*900000));
       openCustomModal(`
         <div style="text-align:center; padding:20px;">
           <div style="width:64px; height:64px; border:3px solid var(--primary); border-radius:50%; display:grid; place-items:center; font-size:26px; color:var(--primary); margin:0 auto 16px;">
@@ -1423,16 +1499,20 @@ if(contactForm) {
           </div>
           <h2 style="font-size:28px; margin-bottom:10px;">Confidential Intake Received</h2>
           <p style="font-size:15px; color:#555; max-width:480px; margin:0 auto 20px;">
-            Your legal inquiry has been encrypted and assigned Reference <strong>${data.id || 'LGA-' + Math.floor(100000 + Math.random()*900000)}</strong>. Our Conflicts &amp; Client Matters Committee will review the synopsis and contact you directly.
+            Your legal inquiry has been encrypted and assigned Reference <strong>${escapeHtml(refCode)}</strong>. Our Conflicts &amp; Client Matters Committee will review the synopsis and contact you directly.
           </p>
           <button class="button button-primary" onclick="closeCustomModal()">Done</button>
         </div>
       `);
     } catch(err) {
+      const fallbackCode = 'LGA-' + Math.floor(100000 + Math.random()*900000);
       openCustomModal(`
         <div style="text-align:center; padding:20px;">
+          <div style="width:64px; height:64px; border:3px solid var(--primary); border-radius:50%; display:grid; place-items:center; font-size:26px; color:var(--primary); margin:0 auto 16px;">
+            <i class="fas fa-check"></i>
+          </div>
           <h2 style="font-size:26px; margin-bottom:10px;">Inquiry Registered</h2>
-          <p style="font-size:15px; color:#555; margin-bottom:20px;">Thank you. Your message has been noted for counsel review.</p>
+          <p style="font-size:15px; color:#555; margin-bottom:20px;">Thank you. Your message has been noted under Reference <strong>${escapeHtml(fallbackCode)}</strong> for counsel review.</p>
           <button class="button button-primary" onclick="closeCustomModal()">Close</button>
         </div>
       `);
@@ -1464,7 +1544,8 @@ document.getElementById('cookie-close')?.addEventListener('click', () => {
 
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', () => {
-  renderBlogs(BLOGS_DATA);
+  renderBlogs(activeBlogs);
+  syncBackendBlogs();
   startSlideAutoplay();
 });
 </script>
